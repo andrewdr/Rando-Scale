@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+   @IBOutlet weak var scaleTableView: UITableView!
+    
+    let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return 4
@@ -19,20 +22,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "scaleTypeCell")
+        let cell = scaleTableView.dequeueReusableCell(withIdentifier: "scaleTypeCell")
         
-        cell.textLabel?.text = "Top Row"
+        cell?.textLabel?.text = scaleTypes[indexPath.row]
+        cell?.textLabel?.textAlignment = .center
         
-        return cell
+        return cell!
         
     }
     
-    @IBOutlet weak var scaleTableView: UITableView!
+ 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        scaleTableView.delegate = self
+        scaleTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
