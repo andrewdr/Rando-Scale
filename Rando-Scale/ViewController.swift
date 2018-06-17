@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-   @IBOutlet weak var scaleTableView: UITableView!
+    
+    @IBOutlet weak var noteNameLabel: UILabel!
+    @IBOutlet weak var scaleTypeLabel: UILabel!
+    @IBOutlet weak var scaleTableView: UITableView!
     
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
     
@@ -38,6 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         scaleTableView.delegate = self
         scaleTableView.dataSource = self
+        scaleTableView.tableFooterView = UIView(frame: .zero)
     }
 
     override func didReceiveMemoryWarning() {
