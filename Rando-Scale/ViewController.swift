@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     
     @IBOutlet weak var noteNameLabel: UILabel!
@@ -42,6 +45,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scaleTableView.delegate = self
         scaleTableView.dataSource = self
         scaleTableView.tableFooterView = UIView(frame: .zero)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Pitches", in: context)
+        let newPitch = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newPitch.setValue("A♭", forKey: "pitch")
+        
+        do{
+            try context.save() throws -> String
+        } catch{
+            print("Failed Saving")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
