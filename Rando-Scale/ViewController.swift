@@ -9,10 +9,17 @@
 import UIKit
 import CoreData
 
+extension CoreDataArrayObj{
+    
+    var pitches: [String]{
+        return pitchesArray as? Array<String> ?? []
+    }set{
+    pitchesArray = newValue as NSArray
+    }
+
+
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
     
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
@@ -37,6 +44,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+
+    }
+
  
     
 
@@ -46,20 +56,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scaleTableView.dataSource = self
         scaleTableView.tableFooterView = UIView(frame: .zero)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Pitches", in: context)
-        let newPitch = NSManagedObject(entity: entity!, insertInto: context)
-        
-        newPitch.setValue("A♭", forKey: "pitch")
-        
-        do{
-            try context.save() throws -> String
-        } catch{
-            print("Failed Saving")
-        }
-        
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return }
+//              let managedContext = appDelegate.persistentContainer.viewContext
+//              let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: managedContext)!
+//        
+//        let pitches = NSManagedObject(entity: pitchEntity, insertInto: managedContext)
+//        pitches.value = ["A", "A♭", "B", "B♭", "C", "D", "D♭", "E", "E♭", "F", "G", "G♭"]
+//        
+//        do{
+//            try managedContext.save() 
+//        }catch let error as NSError{
+//            print("Could Not save. \(error), \(error.userInfo)")
+//        }
+//        
+//        let userFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
+//        
+//        userFetch.fetchLimit = 1
+//        userFetch.predicate = NSPredicate(format: "pitch = %@", "A♭")
+//        userFetch.sortDescriptors = [NSSortDescriptor.init(key:"pitch", ascending: true)]
+//        
+//        let pitches = try! managedContext.fetch(userFetch)
+//        
+//        let aFlat: Pitches = pitches.first as! Pitches
+//        
+//        print("pitch: \(String(describing: aFlat.pitch))")
+//        
+
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
