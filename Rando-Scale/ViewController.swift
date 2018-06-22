@@ -9,15 +9,6 @@
 import UIKit
 import CoreData
 
-extension CoreDataArrayObj{
-    
-    var pitches: [String]{
-        return pitchesArray as? Array<String> ?? []
-    }set{
-    pitchesArray = newValue as NSArray
-    }
-
-
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -43,12 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
         
     }
-    
-
-    }
-
- 
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,32 +41,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scaleTableView.dataSource = self
         scaleTableView.tableFooterView = UIView(frame: .zero)
         
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return }
-//              let managedContext = appDelegate.persistentContainer.viewContext
-//              let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: managedContext)!
-//        
-//        let pitches = NSManagedObject(entity: pitchEntity, insertInto: managedContext)
-//        pitches.value = ["A", "A♭", "B", "B♭", "C", "D", "D♭", "E", "E♭", "F", "G", "G♭"]
-//        
-//        do{
-//            try managedContext.save() 
-//        }catch let error as NSError{
-//            print("Could Not save. \(error), \(error.userInfo)")
-//        }
-//        
-//        let userFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
-//        
-//        userFetch.fetchLimit = 1
-//        userFetch.predicate = NSPredicate(format: "pitch = %@", "A♭")
-//        userFetch.sortDescriptors = [NSSortDescriptor.init(key:"pitch", ascending: true)]
-//        
-//        let pitches = try! managedContext.fetch(userFetch)
-//        
-//        let aFlat: Pitches = pitches.first as! Pitches
-//        
-//        print("pitch: \(String(describing: aFlat.pitch))")
-//        
-
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let scaleTypeEntity = NSEntityDescription.entity(forEntityName: "ScaleType", in: context)
+        let newScale = NSManagedObject(entity: scaleTypeEntity!, insertInto: context)
+        
+        newScale.setValue("Major", forKey: "major")
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed Saving")
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+        request.returnsObjectsAsFaults = false
+        
+        
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as! String)}
+        } catch  {
+            print("Failed")
+        }
+         
     }
 
 
