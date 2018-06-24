@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var scaleTableView: UITableView!
     
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
+    let minorScales = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -34,12 +35,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell!
         
     }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         scaleTableView.delegate = self
         scaleTableView.dataSource = self
         scaleTableView.tableFooterView = UIView(frame: .zero)
+        
+        clearData(entity: "ScaleType")
+        
+
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -64,8 +71,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } catch  {
             print("Failed")
         }
+        
          
     }
+    
+    func clearData(entity: String){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+        request.returnsObjectsAsFaults = false
+        
+        do{
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {context.delete(data)}
+        } catch{
+            
+            print("Deleted all my data")
+            
+        }
+    }
+    
+
+    
+    
 
 
     override func didReceiveMemoryWarning() {
