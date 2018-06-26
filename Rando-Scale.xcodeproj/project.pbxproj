@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D333699D20D9EA5100F54D4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D333699C20D9EA5100F54D4C /* Default-568h@2x.png */; };
+		D33369DC20E0240900F54D4C /* ScaleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33369DB20E0240900F54D4C /* ScaleTypes.swift */; };
 		D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D7E20CF64F700441D10 /* AppDelegate.swift */; };
 		D3B93D8120CF64F700441D10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D8020CF64F700441D10 /* ViewController.swift */; };
 		D3B93D8420CF64F700441D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B93D8220CF64F700441D10 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		D333699C20D9EA5100F54D4C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D33369DB20E0240900F54D4C /* ScaleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTypes.swift; sourceTree = "<group>"; };
 		D3B93D7B20CF64F700441D10 /* Rando-Scale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rando-Scale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B93D7E20CF64F700441D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B93D8020CF64F700441D10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				D3B93D7E20CF64F700441D10 /* AppDelegate.swift */,
 				D3B93D8020CF64F700441D10 /* ViewController.swift */,
+				D33369DB20E0240900F54D4C /* ScaleTypes.swift */,
 				D3B93D8220CF64F700441D10 /* Main.storyboard */,
 				D3B93D8820CF64F900441D10 /* Assets.xcassets */,
 				D3B93D8A20CF64F900441D10 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33369DC20E0240900F54D4C /* ScaleTypes.swift in Sources */,
 				D3B93D8120CF64F700441D10 /* ViewController.swift in Sources */,
 				D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */,
 				D3B93D8720CF64F700441D10 /* Rando_Scale.xcdatamodeld in Sources */,

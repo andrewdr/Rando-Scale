@@ -4,14 +4,13 @@
         <attribute name="pitch" optional="YES" attributeType="String" customClassName="NSArray" syncable="YES"/>
     </entity>
     <entity name="ScaleType" representedClassName="ScaleType" syncable="YES" codeGenerationType="class">
-        <attribute name="major" optional="YES" attributeType="String" customClassName="NSArray" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="minors" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="modes" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="symmetrics" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScaleType" inverseName="relationship" inverseEntity="ScaleType" syncable="YES"/>
     </entity>
     <elements>
         <element name="Pitches" positionX="-63" positionY="-18" width="128" height="60"/>
-        <element name="ScaleType" positionX="-45" positionY="9" width="128" height="120"/>
+        <element name="ScaleType" positionX="-45" positionY="9" width="128" height="105"/>
     </elements>
 </model>

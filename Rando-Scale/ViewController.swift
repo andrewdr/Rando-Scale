@@ -17,7 +17,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var scaleTableView: UITableView!
     
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
-    let minorScales = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
+    let majorScales:NSArray = ["Major"]
+    let minorScales:NSArray = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
+    let modes:NSArray = ["Dorian", "Phrygian", "Lydian", "Lydian Dominant", "Mixolydian", "Locrian"]
+    let symmetrics:NSArray = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -46,14 +49,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         clearData(entity: "ScaleType")
         
-
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let scaleTypeEntity = NSEntityDescription.entity(forEntityName: "ScaleType", in: context)
         let newScale = NSManagedObject(entity: scaleTypeEntity!, insertInto: context)
         
-        newScale.setValue("Major", forKey: "major")
+        newScale.setValue(majorScales, forKey: "major")
+        newScale.setValue(minorScales, forKey: "minors")
+        newScale.setValue(modes, forKey: "modes")
+        newScale.setValue(symmetrics, forKey: "symmetrics")
         
         do {
             try context.save()
@@ -67,10 +72,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as! String)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as! NSArray)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as! NSArray)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as! NSArray)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as! NSArray)}
         } catch  {
             print("Failed")
         }
+        
         
          
     }
