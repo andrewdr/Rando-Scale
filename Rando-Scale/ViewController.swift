@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var scaleTypeLabel: UILabel!
     @IBOutlet weak var scaleTableView: UITableView!
     
+    let pitches = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
     let majorScales:NSArray = ["Major"]
     let minorScales:NSArray = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
@@ -24,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return 4
+        return scaleTypes.count
         
     }
     
@@ -55,10 +56,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let scaleTypeEntity = NSEntityDescription.entity(forEntityName: "ScaleType", in: context)
         let newScale = NSManagedObject(entity: scaleTypeEntity!, insertInto: context)
         
+//        let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: context)
+//        let allPitches = NSManagedObject(entity: pitchEntity!, insertInto: context)
+        
         newScale.setValue(majorScales, forKey: "major")
         newScale.setValue(minorScales, forKey: "minors")
         newScale.setValue(modes, forKey: "modes")
         newScale.setValue(symmetrics, forKey: "symmetrics")
+        
+//        allPitches.setValue(pitches, forKey: "pitch")
+        
+        
         
         do {
             try context.save()
@@ -76,6 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as! NSArray)}
+//            for data in result as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
         } catch  {
             print("Failed")
         }
