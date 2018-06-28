@@ -50,28 +50,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         clearData(entity: "ScaleType")
         
-        
+        //Add Scale Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let scaleTypeEntity = NSEntityDescription.entity(forEntityName: "ScaleType", in: context)
         let newScale = NSManagedObject(entity: scaleTypeEntity!, insertInto: context)
         
-//        let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: context)
-//        let allPitches = NSManagedObject(entity: pitchEntity!, insertInto: context)
-        
+        //Adds All ScalesTypes to Core Data
         newScale.setValue(majorScales, forKey: "major")
         newScale.setValue(minorScales, forKey: "minors")
         newScale.setValue(modes, forKey: "modes")
         newScale.setValue(symmetrics, forKey: "symmetrics")
         
-//        allPitches.setValue(pitches, forKey: "pitch")
+        //Adds Pitch Delegate
+        let pitchContext = appDelegate.persistentContainer.viewContext
+        let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: pitchContext)
+        let allPitches = NSManagedObject(entity: pitchEntity!, insertInto: pitchContext)
         
-        
+        //Adds all pitches to Core Data
+        allPitches.setValue(pitches, forKey: "pitch")
         
         do {
             try context.save()
         } catch {
             print("Failed Saving")
+        }
+        
+        do {
+            try pitchContext.save()
+        } catch {
+            print("Failed Saving")
+        }
+        
+        let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
+        pitchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try pitchContext.fetch(pitchRequest)
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
+        } catch  {
+            print("Failed")
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
@@ -84,7 +102,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as! NSArray)}
-//            for data in result as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
         } catch  {
             print("Failed")
         }
