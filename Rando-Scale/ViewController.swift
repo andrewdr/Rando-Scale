@@ -40,8 +40,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         scaleTableView.delegate = self
@@ -49,6 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         scaleTableView.tableFooterView = UIView(frame: .zero)
         
         clearData(entity: "ScaleType")
+        
         
         //Add Scale Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -72,44 +71,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             try context.save()
-        } catch {
-            print("Failed Saving")
-        }
-        
-        do {
             try pitchContext.save()
         } catch {
             print("Failed Saving")
         }
         
-        let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
-        pitchRequest.returnsObjectsAsFaults = false
-        
-        do {
-            let result = try pitchContext.fetch(pitchRequest)
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
-        } catch  {
-            print("Failed")
-        }
-        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
         request.returnsObjectsAsFaults = false
         
+        let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
+        pitchRequest.returnsObjectsAsFaults = false
         
+        //Fetch Scale Types and Pitches
         do {
             let result = try context.fetch(request)
+            
             for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as! NSArray)}
             for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as! NSArray)}
+            
+            let pitchResult = try pitchContext.fetch(pitchRequest)
+            for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
         } catch  {
             print("Failed")
         }
-        
-        
-         
+
     }
-    
+        //Clear Core Data
     func clearData(entity: String){
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -117,9 +106,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
         request.returnsObjectsAsFaults = false
         
+        let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
+        pitchRequest.returnsObjectsAsFaults = false
+        
         do{
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {context.delete(data)}
+            
+            let pitchResult = try  context.fetch(pitchRequest)
+            for data in pitchResult as! [NSManagedObject]{context.delete(data)}
+            
         } catch{
             
             print("Deleted all my data")
