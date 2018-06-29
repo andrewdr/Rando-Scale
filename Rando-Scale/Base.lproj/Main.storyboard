@@ -73,19 +73,39 @@
                                     <action selector="randomScaleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrz-oh-YAH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-pS-UJ2">
+                                <rect key="frame" x="16" y="613" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Scale Info">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rXc-RF-9Oo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5kX-eY-hdp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PSv-UZ-JmP" secondAttribute="bottom" constant="118" id="7B1-Cc-6LR"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="87g-Z5-8Qg"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cp-Bb-g7C"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="top" secondItem="Ndz-EN-GTE" secondAttribute="bottom" constant="8" symbolic="YES" id="HOk-Vd-tdE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EDT-pS-UJ2" secondAttribute="bottom" constant="6" id="IRA-bq-JHX"/>
+                            <constraint firstItem="EDT-pS-UJ2" firstAttribute="top" secondItem="rXc-RF-9Oo" secondAttribute="bottom" constant="8" id="KKd-Cz-XNn"/>
                             <constraint firstItem="rXc-RF-9Oo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="MMw-cN-ZfA"/>
+                            <constraint firstItem="EDT-pS-UJ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TBk-LD-Slf"/>
                             <constraint firstItem="rXc-RF-9Oo" firstAttribute="top" secondItem="PSv-UZ-JmP" secondAttribute="bottom" constant="8" id="ThO-pz-d9j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EDT-pS-UJ2" secondAttribute="trailing" constant="16" id="WUn-lr-HuT"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XjE-0l-6vc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4lQ-qb-Zbu" secondAttribute="trailing" constant="69" id="ZZr-aC-cjp"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="etF-4L-sHx"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="centerX" secondItem="4lQ-qb-Zbu" secondAttribute="centerX" id="gz8-Rg-XJk"/>
+                            <constraint firstItem="EDT-pS-UJ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4J-sD-eO6"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r3L-Zp-Iwq"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="top" secondItem="4lQ-qb-Zbu" secondAttribute="bottom" constant="119" id="rom-Fp-gWy"/>
                             <constraint firstItem="rXc-RF-9Oo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sIe-qo-nBx"/>
