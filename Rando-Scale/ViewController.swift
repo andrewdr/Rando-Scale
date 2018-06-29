@@ -40,6 +40,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    
+    @IBAction func randomScaleButton(_ sender: Any) {
+        
+        getRandomNote()
+        
+    }
+    
+    func getRandomNote(){
+    
+        //noteNameLabel.text = pitches.randomElement()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scaleTableView.delegate = self
@@ -93,6 +106,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let pitchResult = try pitchContext.fetch(pitchRequest)
             for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
+            
+//            for data in pitchResult as! [NSManagedObject] { let pitchesArray = data.value(forKey: "pitch") as! NSArray}
+            
         } catch  {
             print("Failed")
         }
