@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func getRandomNote(){
     
-        //noteNameLabel.text = pitches.randomElement()
+        noteNameLabel.text = pitches.randomElement()
         
     }
     
