@@ -47,6 +47,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nSZ-lT-t0v">
                                                     <rect key="frame" x="303" y="9" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="tableSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="5JU-GM-3yE"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -90,10 +93,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rXc-RF-9Oo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5kX-eY-hdp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PSv-UZ-JmP" secondAttribute="bottom" constant="118" id="7B1-Cc-6LR"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="87g-Z5-8Qg"/>
-                            <constraint firstItem="PSv-UZ-JmP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9cp-Bb-g7C"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="top" secondItem="Ndz-EN-GTE" secondAttribute="bottom" constant="8" symbolic="YES" id="HOk-Vd-tdE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EDT-pS-UJ2" secondAttribute="bottom" constant="6" id="IRA-bq-JHX"/>
                             <constraint firstItem="EDT-pS-UJ2" firstAttribute="top" secondItem="rXc-RF-9Oo" secondAttribute="bottom" constant="8" id="KKd-Cz-XNn"/>
@@ -105,11 +106,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4lQ-qb-Zbu" secondAttribute="trailing" constant="69" id="ZZr-aC-cjp"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="etF-4L-sHx"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="centerX" secondItem="4lQ-qb-Zbu" secondAttribute="centerX" id="gz8-Rg-XJk"/>
-                            <constraint firstItem="EDT-pS-UJ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4J-sD-eO6"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="r3L-Zp-Iwq"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="top" secondItem="4lQ-qb-Zbu" secondAttribute="bottom" constant="119" id="rom-Fp-gWy"/>
                             <constraint firstItem="rXc-RF-9Oo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sIe-qo-nBx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rXc-RF-9Oo" secondAttribute="bottom" constant="62" id="uQV-yR-S3H"/>
                             <constraint firstItem="PSv-UZ-JmP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v0Y-nd-A3b"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w76-FB-S2t"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="zv5-eF-ers"/>

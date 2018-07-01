@@ -15,13 +15,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
     @IBOutlet weak var scaleTableView: UITableView!
-    
+
     let pitches = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
     let majorScales:NSArray = ["Major"]
     let minorScales:NSArray = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
     let modes:NSArray = ["Dorian", "Phrygian", "Lydian", "Lydian Dominant", "Mixolydian", "Locrian"]
     let symmetrics:NSArray = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
+    var randomScale:[NSArray] = []
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -42,16 +43,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func randomScaleButton(_ sender: Any) {
-        
         getRandomNote()
+        getRandomScale()
         
+
     }
     
     func getRandomNote(){
-    
         noteNameLabel.text = pitches.randomElement()
+    }
+    
+    func getRandomScale(){
+        
+//        var flatArray:[NSArray] = []
+        var mapArray:[NSArray] = []
+        mapArray = randomScale.compactMap({$0})
+        
+//        flatArray = mapArray.compactMap({$0})
+        
+        print(mapArray)
+        
+ 
+        
+        if mapArray.isEmpty{
+            
+            scaleTypeLabel.text = "Major"
+        }
+//            else{
+//
+//            let scaleLabel = mapArray.randomElement()
+////           scaleTypeLabel.text = scaleLabel as? String
+//            print(scaleLabel as Any)
+//        }
+    
         
     }
+    
+    @IBAction func tableSwitch(_ sender: Any) {
+    
+        randomScale.append(minorScales)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
