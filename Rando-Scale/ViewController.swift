@@ -88,9 +88,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func tableSwitch(_ sender: Any) {
-    
-        randomScale.append(minorScales)
+        
+        if randomScale.isEmpty{
+            randomScale.append(minorScales)
+        }else{
+            randomScale.remove(at: 0)
+        }
+
     }
+    
+
     
     
     override func viewDidLoad() {
