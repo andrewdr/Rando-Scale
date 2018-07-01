@@ -47,10 +47,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         getRandomScale()
     }
     
+    //Get Randome Note
     func getRandomNote(){
-        noteNameLabel.text = pitches.randomElement()
+        
+        let currentPitch = noteNameLabel.text
+        var nextPitch = pitches.randomElement()
+        
+        while currentPitch == nextPitch {
+            nextPitch = pitches.randomElement()
+        }
+        
+        noteNameLabel.text = nextPitch
     }
     
+    //Get Random Scale
     func getRandomScale(){
         
 //        var flatArray:[NSArray] = []
