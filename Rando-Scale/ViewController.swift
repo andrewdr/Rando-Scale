@@ -63,16 +63,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Get Random Scale
     func getRandomScale(){
         
-        var randoArray = [] as Array
-        var mapArray:String = ""
+        let currentScale = scaleTypeLabel.text
+        var randoArray = randomScale.randomElement() as! [Any]
+        var mappedArray = randoArray.randomElement() as! String
         
-        randoArray = randomScale.randomElement() as! [Any]
-        mapArray = randoArray.randomElement() as! String
-        scaleTypeLabel.text = mapArray
-        print(mapArray)
+        while currentScale == mappedArray {
+             randoArray = randomScale.randomElement() as! [Any]
+             mappedArray = randoArray.randomElement() as! String
+        }
         
-        if randoArray.isEmpty{
-            scaleTypeLabel.text = "Major"
+        scaleTypeLabel.text = mappedArray
+        print(mappedArray)
+        
+        if randomScale.isEmpty{
+            randoArray = ["Major"]
+            mappedArray = randoArray as! String
         }
     }
     
@@ -81,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if randomScale.isEmpty{
             randomScale.append(minorScales)
         }else{
-            randomScale.remove(at: 0)
+            randomScale = ["Major"]
         }
 
     }
