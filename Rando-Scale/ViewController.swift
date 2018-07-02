@@ -16,13 +16,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var scaleTypeLabel: UILabel!
     @IBOutlet weak var scaleTableView: UITableView!
 
-    let pitches = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
+    let pitches:Array = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
-    let majorScales:NSArray = ["Major"]
-    let minorScales:NSArray = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
-    let modes:NSArray = ["Dorian", "Phrygian", "Lydian", "Lydian Dominant", "Mixolydian", "Locrian"]
-    let symmetrics:NSArray = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
-    var randomScale:[NSArray] = []
+    let majorScales:Array = ["Major"]
+    let minorScales:Array = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
+    let modes:Array = ["Dorian", "Phrygian", "Lydian", "Lydian Dominant", "Mixolydian", "Locrian"]
+    let symmetrics:Array = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
+    var randomScale = [] as Array
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -45,8 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func randomScaleButton(_ sender: Any) {
         getRandomNote()
         getRandomScale()
-        
-
     }
     
     func getRandomNote(){
@@ -56,8 +54,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func getRandomScale(){
         
 //        var flatArray:[NSArray] = []
-        var mapArray:[NSArray] = []
-        mapArray = randomScale.compactMap({$0})
+        var mapArray = [] as Array
+        mapArray = randomScale.compactMap({$0}) as Array
         
 //        flatArray = mapArray.compactMap({$0})
         
@@ -131,13 +129,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             let result = try context.fetch(request)
             
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as! NSArray)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as! NSArray)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as! NSArray)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as! NSArray)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as Any)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as Any)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as Any)}
+            for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as Any)}
             
             let pitchResult = try pitchContext.fetch(pitchRequest)
-            for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
+            for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as Any)}
             
             
         } catch  {
