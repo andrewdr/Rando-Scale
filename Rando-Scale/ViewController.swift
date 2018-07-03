@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func randomScaleButton(_ sender: Any) {
         getRandomNote()
-        getRandomScale()
+        getScales()
     }
     
     //Get Randome Note
@@ -60,44 +60,71 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         noteNameLabel.text = nextPitch
     }
     
-    //Get Random Scale
-    func getRandomScale(){
-        
-        
-        var randoArray = [] as Array
-        var mappedArray = ""
+    func getScales(){
         
         if randomScale.isEmpty{
             scaleTypeLabel.text = "Major"
-        }else{
-            
-            randoArray = randomScale.randomElement() as! [Any]
-            mappedArray = randoArray.randomElement() as! String
-            scaleTypeLabel.text = mappedArray
-            
-            let currentScale = scaleTypeLabel.text
-            var nextScale = randoArray.randomElement() as! String
-            
-            while currentScale == nextScale {
-                nextScale = randoArray.randomElement() as! String
-            }
         }
         
-        print(mappedArray)
-        
+        do {
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+            request.returnsObjectsAsFaults = false
+            
+            let result = try context.fetch(request)
+            
+            var majorScaleArray = [] as Array
+            var minorScaleArray = [] as Array
+            var modesScaleArray = [] as Array
+            var symmetricsScaleArray = [] as Array
+            
+            for data in result as! [NSManagedObject] {majorScaleArray = data.value(forKey: "major") as! [Any]}
+            for data in result as! [NSManagedObject] {minorScaleArray = data.value(forKey: "minors") as! [Any]}
+            for data in result as! [NSManagedObject] {modesScaleArray = data.value(forKey: "modes") as! [Any]}
+            for data in result as! [NSManagedObject] {symmetricsScaleArray = data.value(forKey: "symmetrics") as! [Any]}
+            
+            
+            
+            randomScale.append(majorScaleArray)
+            randomScale.append(minorScaleArray)
+            randomScale.append(modesScaleArray)
+            randomScale.append(symmetricsScaleArray)
+            
+            var selectedScaleArray = [] as Array
+            var finalScale = ""
+
+            selectedScaleArray = randomScale.randomElement() as! [String]
+            finalScale = selectedScaleArray.randomElement() as! String
+            scaleTypeLabel.text = finalScale
+            
+//            let currentScale = scaleTypeLabel.text
+//            var nextScale = selectedScaleArray.randomElement() as! String
+//
+//            while currentScale == nextScale{
+//                nextScale = selectedScaleArray.randomElement() as! String
+//            }
+
+            print(finalScale)
+            
+            } catch  {
+                print("Failed")
+            }
     }
     
     @IBAction func tableSwitch(_ sender: Any) {
         
-        if randomScale.isEmpty{
-            randomScale.append(minorScales)
-        }else{
-            randomScale.removeAll()
-        }
+//        if randomScale.isEmpty{
+//            randomScale.append(minorScales)
+//        }else{
+//            randomScale.removeAll()
+//        }
+    
     }
     
 
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,11 +211,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-
-    
-    
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
