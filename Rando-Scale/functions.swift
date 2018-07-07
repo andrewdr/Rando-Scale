@@ -12,17 +12,25 @@ import CoreData
 
 
 
-//func getRandomNote(){
-//    
-//    do {
-//        let pitchResult = try pitchContext.fetch(pitchRequest)
-//        for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as! NSArray)}
-//        
-//        //            for data in pitchResult as! [NSManagedObject] { let pitchesArray = data.value(forKey: "pitch") as! NSArray}
-//        
-//    } catch  {
-//        print("Failed")
-//    }
-//    
-//    
-//}
+func getSelectedScales(dataKey: String){
+
+    do{
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+    request.returnsObjectsAsFaults = false
+    
+    let result = try context.fetch(request)
+    
+    var selectedScaleArray = [] as Array
+    
+    for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [Any]}
+    
+    print(selectedScaleArray)
+        
+    }catch{
+        print("An Error Ocurred")
+    }
+}

@@ -9,12 +9,27 @@
 import UIKit
 import CoreData
 
+class ScaleTableViewController: UITableViewController{
+    
+    @IBOutlet weak var majorSwitch: UISwitch!
+    @IBOutlet weak var minorSwitch: UISwitch!
+    
+    func addScales(){
+        if minorSwitch.isEnabled{
+            getSelectedScales(dataKey: "minors")
+        }
+    }
+    
+    
+}
 
-class ViewController: UIViewController{
+
+
+
+class ViewController: UIViewController {
     
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
-    @IBOutlet weak var scaleTableView: UITableView!
 
     let pitches:Array = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
@@ -24,27 +39,10 @@ class ViewController: UIViewController{
     let symmetrics:Array = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
     var randomScale = [] as Array
     
-//    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-//
-//        return scaleTypes.count
-//
-//    }
-//
-//    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-//
-//        let cell = scaleTableView.dequeueReusableCell(withIdentifier: "scaleTypeCell")
-//
-//        cell?.textLabel?.text = scaleTypes[indexPath.row]
-//        cell?.textLabel?.textAlignment = .center
-//
-//        return cell!
-//
-//    }
-    
     
     @IBAction func randomScaleButton(_ sender: Any) {
         getRandomNote()
-        getScales()
+//        getSelectedScales(dataKey: "minors")
     }
     
     //Get Randome Note
