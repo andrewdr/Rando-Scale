@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController{
     
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
@@ -24,22 +24,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let symmetrics:Array = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
     var randomScale = [] as Array
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        return scaleTypes.count
-        
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-        let cell = scaleTableView.dequeueReusableCell(withIdentifier: "scaleTypeCell")
-        
-        cell?.textLabel?.text = scaleTypes[indexPath.row]
-        cell?.textLabel?.textAlignment = .center
-        
-        return cell!
-        
-    }
+//    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+//
+//        return scaleTypes.count
+//
+//    }
+//
+//    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+//
+//        let cell = scaleTableView.dequeueReusableCell(withIdentifier: "scaleTypeCell")
+//
+//        cell?.textLabel?.text = scaleTypes[indexPath.row]
+//        cell?.textLabel?.textAlignment = .center
+//
+//        return cell!
+//
+//    }
     
     
     @IBAction func randomScaleButton(_ sender: Any) {
@@ -128,9 +128,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scaleTableView.delegate = self
-        scaleTableView.dataSource = self
-        scaleTableView.tableFooterView = UIView(frame: .zero)
+//        scaleTableView.delegate = self
+//        scaleTableView.dataSource = self
+//        scaleTableView.tableFooterView = UIView(frame: .zero)
         
         clearData(entity: "ScaleType")
         
