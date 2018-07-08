@@ -62,10 +62,7 @@ var receivedScaleText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        scaleTableView.delegate = self
-//        scaleTableView.dataSource = self
-//        scaleTableView.tableFooterView = UIView(frame: .zero)
-        
+
         clearData(entity: "ScaleType")
         
         

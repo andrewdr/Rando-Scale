@@ -29,6 +29,20 @@ class ScaleTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func addModes(_ sender: Any) {
+        if modesSwitch.isOn{
+            getSelectedScales(dataKey: "modes")
+        }
+    }
+    
+    @IBAction func addSymmetrics(_ sender: Any) {
+        if symmetricsSwitch.isOn{
+            getSelectedScales(dataKey: "symmetrics")
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
