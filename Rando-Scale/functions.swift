@@ -10,7 +10,23 @@ import Foundation
 import UIKit
 import CoreData
 
+var totalScaleArray = [] as Array
+var sentScaleText = ""
 
+func getFinalScale(){
+    
+    var randomScaleType = [] as Array
+    var finalRandomScale = ""
+    
+    randomScaleType = totalScaleArray.randomElement() as! [String]
+    finalRandomScale = randomScaleType.randomElement() as! String
+    
+    sentScaleText = finalRandomScale
+    receivedScaleText = sentScaleText
+    
+    print(finalRandomScale)
+    
+}
 
 func getSelectedScales(dataKey: String){
 
@@ -25,10 +41,12 @@ func getSelectedScales(dataKey: String){
     let result = try context.fetch(request)
     
     var selectedScaleArray = [] as Array
+  
     
     for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [Any]}
     
-    print(selectedScaleArray)
+    totalScaleArray.append(selectedScaleArray)
+
         
     }catch{
         print("An Error Ocurred")

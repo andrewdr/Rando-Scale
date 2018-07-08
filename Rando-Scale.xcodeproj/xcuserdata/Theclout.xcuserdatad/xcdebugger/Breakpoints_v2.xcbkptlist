@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rando-Scale/ViewController.swift"
-            timestampString = "552683414.444927"
+            timestampString = "552781031.271361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "getRandomNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rando-Scale/ViewController.swift"
-            timestampString = "552683414.445285"
+            timestampString = "552781031.271703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "randomScaleButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rando-Scale/ViewController.swift"
-            timestampString = "552683414.445531"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "getScales()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

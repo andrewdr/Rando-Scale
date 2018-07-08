@@ -30,6 +30,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-1D-cVM">
                                                     <rect key="frame" x="310.5" y="6" width="48.5" height="31"/>
+                                                    <connections>
+                                                        <action selector="addMajors:" destination="RLL-QU-DaN" eventType="valueChanged" id="V1F-um-X6w"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-mS-yPC">
                                                     <rect key="frame" x="166" y="11" width="43" height="21"/>
@@ -59,6 +62,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="psm-4r-qdA">
                                                     <rect key="frame" x="312" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="addMinors:" destination="RLL-QU-DaN" eventType="valueChanged" id="9CA-jD-m7o"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74b-oq-ONJ">
                                                     <rect key="frame" x="161.5" y="11" width="52" height="21"/>
@@ -134,8 +140,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="AtL-ek-LAX"/>
                     <connections>
-                        <outlet property="majorSwitch" destination="4Hk-1D-cVM" id="EYM-jO-AiB"/>
-                        <outlet property="minorSwitch" destination="psm-4r-qdA" id="cjs-ag-0lM"/>
+                        <outlet property="majorSwitich" destination="4Hk-1D-cVM" id="Zge-Vp-H6f"/>
+                        <outlet property="minorSwitch" destination="psm-4r-qdA" id="vtX-ei-ko3"/>
+                        <outlet property="modesSwitch" destination="2O9-5a-Wit" id="n2f-eR-rjQ"/>
+                        <outlet property="symmetricsSwitch" destination="ZWx-sc-IWr" id="OB9-CZ-i3K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIW-mN-a0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,7 +187,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="randomScaleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qrz-oh-YAH"/>
+                                    <action selector="randomScaleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ua3-7s-wJB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-pS-UJ2">
@@ -228,8 +236,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="noteNameLabel" destination="Ndz-EN-GTE" id="V3O-Xa-ThY"/>
-                        <outlet property="scaleTypeLabel" destination="4lQ-qb-Zbu" id="9dq-5R-stc"/>
+                        <outlet property="noteNameLabel" destination="Ndz-EN-GTE" id="hkG-n2-Q74"/>
+                        <outlet property="scaleTypeLabel" destination="4lQ-qb-Zbu" id="uAl-6J-Ne7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

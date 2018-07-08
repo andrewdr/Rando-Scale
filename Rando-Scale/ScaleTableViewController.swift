@@ -10,33 +10,34 @@ import Foundation
 import UIKit
 import CoreData
 
-//class ScaleTableViewController: UITableViewController {
-//
-//    @IBOutlet weak var majorSwitich: UISwitch!
-//    @IBOutlet weak var minorSwitch: UISwitch!
-//    @IBOutlet weak var modesSwitch: UISwitch!
-//    @IBOutlet weak var symmetricsSwitch: UISwitch!
-//
-//
-//
-//    func addScales(){
-//
-//        if minorSwitch.isOn{
-//
-//        }
-//
-//    }
+class ScaleTableViewController: UITableViewController {
 
+    @IBOutlet weak var majorSwitich: UISwitch!
+    @IBOutlet weak var minorSwitch: UISwitch!
+    @IBOutlet weak var modesSwitch: UISwitch!
+    @IBOutlet weak var symmetricsSwitch: UISwitch!
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
+    
+    @IBAction func addMajors(_ sender: Any) {
+        if majorSwitich.isOn{
+            getSelectedScales(dataKey: "major")
+        }
+    }
+    @IBAction func addMinors(_ sender: Any) {
+        if minorSwitch.isOn{
+            getSelectedScales(dataKey: "minors")
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         
 
 
-//    }
+    }
 
     // MARK: - Table view data source
 
@@ -105,4 +106,4 @@ import CoreData
     }
     */
 
-//}
+}
