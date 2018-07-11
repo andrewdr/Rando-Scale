@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAx-OO-Mus">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="RLL-QU-DaN" customClass="ScaleTableViewController" customModule="Rando_Scale" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="jwJ-hg-40m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -154,7 +154,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIW-mN-a0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="-38"/>
+            <point key="canvasLocation" x="1862" y="701"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -165,7 +165,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A♭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndz-EN-GTE">
-                                <rect key="frame" x="161" y="53" width="53" height="40"/>
+                                <rect key="frame" x="161" y="97" width="53" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AZg-xn-P0C"/>
                                 </constraints>
@@ -174,7 +174,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-qb-Zbu">
-                                <rect key="frame" x="69" y="101" width="237" height="36"/>
+                                <rect key="frame" x="69" y="145" width="237" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -209,9 +209,12 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="tJc-b7-xUW" kind="show" id="wv6-4D-min"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-WO-Mhk">
-                                <rect key="frame" x="0.0" y="191" width="375" height="287"/>
+                                <rect key="frame" x="0.0" y="235" width="375" height="199"/>
                                 <connections>
                                     <segue destination="RLL-QU-DaN" kind="embed" id="TN6-c8-7dk"/>
                                 </connections>
@@ -241,12 +244,82 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Tcs-Gi-Lnu"/>
                     <connections>
                         <outlet property="noteNameLabel" destination="Ndz-EN-GTE" id="hkG-n2-Q74"/>
                         <outlet property="scaleTypeLabel" destination="4lQ-qb-Zbu" id="uAl-6J-Ne7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="134"/>
+        </scene>
+        <!--Scale Info-->
+        <scene sceneID="H6Q-L0-Ov5">
+            <objects>
+                <viewController id="tJc-b7-xUW" customClass="ScaleInfoViewController" customModule="Rando_Scale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dce-ZP-eEO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-rc-OsN">
+                                <rect key="frame" x="16" y="162" width="343" height="173"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5v-lg-3sK">
+                                <rect key="frame" x="69" y="86" width="237" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xAq-fT-txf">
+                                <rect key="frame" x="16" y="343" width="343" height="168"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xAq-fT-txf" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="16" id="20A-kC-2H9"/>
+                            <constraint firstItem="hI7-rc-OsN" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="16" id="4d0-xt-gMw"/>
+                            <constraint firstItem="K5v-lg-3sK" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="69" id="4eL-xs-qTU"/>
+                            <constraint firstItem="K5v-lg-3sK" firstAttribute="top" secondItem="aNq-uA-6gr" secondAttribute="top" constant="22" id="6hD-hj-6Ab"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="332" id="7y5-tG-4oI"/>
+                            <constraint firstItem="hI7-rc-OsN" firstAttribute="top" secondItem="K5v-lg-3sK" secondAttribute="bottom" constant="40" id="AoC-dU-eMJ"/>
+                            <constraint firstItem="K5v-lg-3sK" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="CfO-0S-7GK"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="K5v-lg-3sK" secondAttribute="trailing" constant="69" id="FGh-7y-jqZ"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="xAq-fT-txf" secondAttribute="bottom" constant="156" id="Jbl-Ko-JMx"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="hI7-rc-OsN" secondAttribute="trailing" constant="16" id="LG2-6z-JqB"/>
+                            <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Rcl-9y-F3E"/>
+                            <constraint firstItem="xAq-fT-txf" firstAttribute="top" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="8" id="Z4N-Gh-lsd"/>
+                            <constraint firstItem="hI7-rc-OsN" firstAttribute="top" secondItem="K5v-lg-3sK" secondAttribute="bottom" constant="40" id="dSE-B1-pgE"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="xAq-fT-txf" secondAttribute="trailing" constant="16" id="n81-6U-Gqk"/>
+                            <constraint firstItem="hI7-rc-OsN" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="pdZ-Sf-I3l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aNq-uA-6gr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scale Info" id="ekN-MH-PWh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRz-Sl-wjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2736.8000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Yq-JV-H1G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dAx-OO-Mus" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4uC-yL-cbh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UPe-Kz-Tr3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7o-ND-8Zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
