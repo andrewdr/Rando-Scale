@@ -79,9 +79,11 @@ func removeScales(dataKey: String){
         var arraySet2 = Set(totalScaleArray)
         
         
-       arraySet2.subtract(selectedSet)
         
-        print(arraySet2)
+        arraySet2.subtract(selectedSet)
+        
+        
+        totalScaleArray = Array(arraySet2)
         
         
     }catch{

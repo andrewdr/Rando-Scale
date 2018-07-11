@@ -21,6 +21,8 @@ class ScaleTableViewController: UITableViewController {
     @IBAction func addMajors(_ sender: Any) {
         if majorSwitich.isOn{
             getSelectedScales(dataKey: "major")
+        }else{
+            removeScales(dataKey: "major")
         }
     }
     @IBAction func addMinors(_ sender: Any) {
@@ -34,12 +36,16 @@ class ScaleTableViewController: UITableViewController {
     @IBAction func addModes(_ sender: Any) {
         if modesSwitch.isOn{
             getSelectedScales(dataKey: "modes")
+        }else{
+            removeScales(dataKey: "modes")
         }
     }
     
     @IBAction func addSymmetrics(_ sender: Any) {
         if symmetricsSwitch.isOn{
             getSelectedScales(dataKey: "symmetrics")
+        }else{
+            removeScales(dataKey: "symmetrics")
         }
     }
     
