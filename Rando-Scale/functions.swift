@@ -58,6 +58,7 @@ func getFinalScale(){
     receivedScaleText = sentScaleText
 }
 
+// Remove Scales from Randomized Array
 func removeScales(dataKey: String){
     
     do{
@@ -84,6 +85,8 @@ func removeScales(dataKey: String){
         
         
         totalScaleArray = Array(arraySet2)
+        
+        print(totalScaleArray)
         
         
     }catch{

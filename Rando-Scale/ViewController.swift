@@ -54,13 +54,6 @@ var receivedScaleText = ""
         scaleTypeLabel.text = receivedScaleText
         
         
-//        if receivedScaleText == ""{
-//            scaleTypeLabel.text = "Major"
-//        }else{
-//        
-//       
-//        }
-        
     }
     
 
