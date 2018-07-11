@@ -262,8 +262,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-rc-OsN">
-                                <rect key="frame" x="16" y="162" width="343" height="173"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c-major" translatesAutoresizingMaskIntoConstraints="NO" id="hI7-rc-OsN">
+                                <rect key="frame" x="16" y="162" width="343" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="uCR-SH-W6a"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5v-lg-3sK">
                                 <rect key="frame" x="69" y="86" width="237" height="36"/>
@@ -271,11 +274,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xAq-fT-txf">
-                                <rect key="frame" x="16" y="343" width="343" height="168"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAq-fT-txf">
+                                <rect key="frame" x="16" y="283" width="343" height="168"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -285,11 +291,11 @@
                             <constraint firstItem="hI7-rc-OsN" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="16" id="4d0-xt-gMw"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="69" id="4eL-xs-qTU"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="top" secondItem="aNq-uA-6gr" secondAttribute="top" constant="22" id="6hD-hj-6Ab"/>
-                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="332" id="7y5-tG-4oI"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="392" id="7y5-tG-4oI"/>
                             <constraint firstItem="hI7-rc-OsN" firstAttribute="top" secondItem="K5v-lg-3sK" secondAttribute="bottom" constant="40" id="AoC-dU-eMJ"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="CfO-0S-7GK"/>
                             <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="K5v-lg-3sK" secondAttribute="trailing" constant="69" id="FGh-7y-jqZ"/>
-                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="xAq-fT-txf" secondAttribute="bottom" constant="156" id="Jbl-Ko-JMx"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="bottom" secondItem="xAq-fT-txf" secondAttribute="bottom" constant="216" id="Jbl-Ko-JMx"/>
                             <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="hI7-rc-OsN" secondAttribute="trailing" constant="16" id="LG2-6z-JqB"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Rcl-9y-F3E"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="top" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="8" id="Z4N-Gh-lsd"/>
@@ -300,6 +306,11 @@
                         <viewLayoutGuide key="safeArea" id="aNq-uA-6gr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Scale Info" id="ekN-MH-PWh"/>
+                    <connections>
+                        <outlet property="scaleImage" destination="hI7-rc-OsN" id="NtV-rG-vu7"/>
+                        <outlet property="scaleInfoLabel" destination="K5v-lg-3sK" id="vi4-ge-2er"/>
+                        <outlet property="scaleInfoText" destination="xAq-fT-txf" id="2th-CM-Idj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRz-Sl-wjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,4 +335,7 @@
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="c-major" width="500" height="110"/>
+    </resources>
 </document>

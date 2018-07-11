@@ -9,9 +9,25 @@
 import UIKit
 
 class ScaleInfoViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var scaleInfoLabel: UILabel!
+    @IBOutlet weak var scaleImage: UIImageView!
+    @IBOutlet weak var scaleInfoText: UITextView!
+    
+    
+//    func getScaleImage{
+//        scaleInfoText.text = 
+//    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scaleInfoText.text = majorText
+    
 
         // Do any additional setup after loading the view.
     }

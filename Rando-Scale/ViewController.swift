@@ -12,6 +12,8 @@ import CoreData
 var receivedScaleText = ""
 
 
+
+
     class ViewController: UIViewController{
         
 

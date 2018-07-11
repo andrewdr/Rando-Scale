@@ -20,6 +20,7 @@
 		D3B93D9720CF64F900441D10 /* Rando_ScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D9620CF64F900441D10 /* Rando_ScaleTests.swift */; };
 		D3B93DA220CF64F900441D10 /* Rando_ScaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */; };
 		D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */; };
+		D3BDD02020F5EDE800196E0D /* ScaleText copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDD01F20F5EDE700196E0D /* ScaleText copy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rando_ScaleUITests.swift; sourceTree = "<group>"; };
 		D3B93DA320CF64F900441D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInfoViewController.swift; sourceTree = "<group>"; };
+		D3BDD01F20F5EDE700196E0D /* ScaleText copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScaleText copy.swift"; path = "../../Brass-Gym/Brass-Gym/ScaleText copy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D33369DD20E5C14000F54D4C /* functions.swift */,
 				D38CD25520F301DD002F5CDC /* subtractArray.playground */,
 				D3B93D8220CF64F700441D10 /* Main.storyboard */,
+				D3BDD01F20F5EDE700196E0D /* ScaleText copy.swift */,
 				D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */,
 				D3B93D8820CF64F900441D10 /* Assets.xcassets */,
 				D3B93D8A20CF64F900441D10 /* LaunchScreen.storyboard */,
@@ -287,6 +290,7 @@
 				D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */,
 				D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */,
 				D3B93D8720CF64F700441D10 /* Rando_Scale.xcdatamodeld in Sources */,
+				D3BDD02020F5EDE800196E0D /* ScaleText copy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
