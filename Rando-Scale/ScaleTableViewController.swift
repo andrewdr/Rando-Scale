@@ -26,6 +26,8 @@ class ScaleTableViewController: UITableViewController {
     @IBAction func addMinors(_ sender: Any) {
         if minorSwitch.isOn{
             getSelectedScales(dataKey: "minors")
+        }else{
+            removeScales(dataKey: "minors")
         }
     }
     

@@ -13,6 +13,7 @@ import CoreData
 var totalScaleArray = [String]()
 var sentScaleText = ""
 
+//Add possible scales to array via table switches
 func getSelectedScales(dataKey: String){
 
     do{
@@ -40,6 +41,7 @@ func getSelectedScales(dataKey: String){
     }
 }
 
+// Select Final Scale from Randomized Array
 func getFinalScale(){
     
     var randomScaleType = [String]()
@@ -56,9 +58,37 @@ func getFinalScale(){
     receivedScaleText = sentScaleText
 }
 
-func removeScales(){
+func removeScales(dataKey: String){
     
-//    var set1 = Set<<#Element: Hashable#>>(totalScaleArray)
+    do{
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+        
+        request.returnsObjectsAsFaults = false
+        let result = try context.fetch(request)
+        
+        var selectedScaleArray = [String]()
+        
+        
+        for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [String]}
+        
+        
+        let selectedSet = Set(selectedScaleArray)
+        var arraySet2 = Set(totalScaleArray)
+        
+        
+       arraySet2.subtract(selectedSet)
+        
+        print(arraySet2)
+        
+        
+    }catch{
+        print("An Error Ocurred")
+    }
+    
+//    var set1
     
     
 }
