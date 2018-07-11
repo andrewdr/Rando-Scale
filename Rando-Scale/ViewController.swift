@@ -33,9 +33,6 @@ var receivedScaleText = ""
     @IBAction func randomScaleButton(_ sender: Any) {
         getRandomNote()
         getScales()
-        
-
-        
     }
     
     //Get Randome Note
@@ -54,8 +51,15 @@ var receivedScaleText = ""
     func getScales(){
         
         getFinalScale()
-        
         scaleTypeLabel.text = receivedScaleText
+        
+        
+//        if receivedScaleText == ""{
+//            scaleTypeLabel.text = "Major"
+//        }else{
+//        
+//       
+//        }
         
     }
     

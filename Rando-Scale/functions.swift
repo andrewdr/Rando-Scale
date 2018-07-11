@@ -10,23 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
-var totalScaleArray = [] as Array
+var totalScaleArray = [String]()
 var sentScaleText = ""
-
-func getFinalScale(){
-    
-    var randomScaleType = [] as Array
-    var finalRandomScale = ""
-    
-    randomScaleType = totalScaleArray.randomElement() as! [String]
-    finalRandomScale = randomScaleType.randomElement() as! String
-    
-    sentScaleText = finalRandomScale
-    receivedScaleText = sentScaleText
-    
-    print(finalRandomScale)
-    
-}
 
 func getSelectedScales(dataKey: String){
 
@@ -40,15 +25,40 @@ func getSelectedScales(dataKey: String){
     
     let result = try context.fetch(request)
     
-    var selectedScaleArray = [] as Array
+    var selectedScaleArray = [String]()
   
     
-    for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [Any]}
+        for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [String]}
     
-    totalScaleArray.append(selectedScaleArray)
+    totalScaleArray.append(contentsOf: selectedScaleArray)
+        
+        print(totalScaleArray)
 
         
     }catch{
         print("An Error Ocurred")
     }
+}
+
+func getFinalScale(){
+    
+    var randomScaleType = [String]()
+    var finalRandomScale = ""
+    
+    randomScaleType = [totalScaleArray.randomElement()] as! [String]
+    
+    
+    finalRandomScale = randomScaleType[0]
+    
+    print(finalRandomScale)
+    
+    sentScaleText = finalRandomScale
+    receivedScaleText = sentScaleText
+}
+
+func removeScales(){
+    
+//    var set1 = Set<<#Element: Hashable#>>(totalScaleArray)
+    
+    
 }
