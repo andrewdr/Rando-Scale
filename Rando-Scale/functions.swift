@@ -97,3 +97,34 @@ func removeScales(dataKey: String){
     
     
 }
+
+//Clear Core Data
+func clearData(entity: String){
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
+    request.returnsObjectsAsFaults = false
+    
+    let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
+    pitchRequest.returnsObjectsAsFaults = false
+    
+    let descriptionRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleDescription")
+    descriptionRequest.returnsObjectsAsFaults = false
+    
+    do{
+        let result = try context.fetch(request)
+        for data in result as! [NSManagedObject] {context.delete(data)}
+        
+        let pitchResult = try  context.fetch(pitchRequest)
+        for data in pitchResult as! [NSManagedObject]{context.delete(data)}
+        
+        let descriptionResult = try  context.fetch(pitchRequest)
+        for data in descriptionResult as! [NSManagedObject]{context.delete(data)}
+        
+    } catch{
+        
+        print("Failed")
+        
+    }
+}

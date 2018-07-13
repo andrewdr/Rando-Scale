@@ -27,9 +27,9 @@ class ScaleInfoViewController: UIViewController {
         super.viewDidLoad()
         
         scaleInfoText.text = majorText
-    
-
-        // Do any additional setup after loading the view.
+        
+        addDescriptionsToCoreData()
+        
     }
     
 
