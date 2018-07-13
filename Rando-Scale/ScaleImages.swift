@@ -10,9 +10,18 @@ import Foundation
 import UIKit
 import CoreData
 
-let majorImage:UIImage  = #imageLiteral(resourceName: "c-major")
+//let majorImage:UIImage = #imageLiteral(resourceName: "c-major")
+
+let majorImage:UIImage = #imageLiteral(resourceName: "c-major")
+let majorData = majorImage.pngData()
+
 let naturalMinorImage:UIImage  = #imageLiteral(resourceName: "c-natural-minor")
+let naturalMinorData = naturalMinorImage.pngData()
+
+
 let harmonicMinorImage:UIImage  = #imageLiteral(resourceName: "c-harmonic-minor")
+let harmonicMinorData = harmonicMinorImage.pngData()
+
 let melodicMinorImage:UIImage  = #imageLiteral(resourceName: "c-melodic-minor")
 let bluesImage:UIImage  = #imageLiteral(resourceName: "blues")
 let dorianImage:UIImage  = #imageLiteral(resourceName: "c-dorian")
@@ -30,29 +39,37 @@ let wholeToneImage:UIImage  = #imageLiteral(resourceName: "whole-tone")
 
 
 
-var scaleImages:[UIImage] = [majorImage, naturalMinorImage, harmonicMinorImage]
+var scaleImageArray:[Data] = [majorData!, naturalMinorData!, harmonicMinorData!]
 
-func addDescriptionsToCoreData(){
+func addImagesoCoreData(){
     //Add ScaleDescription Delegate
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
-    let scaleDescriptionEntity = NSEntityDescription.entity(forEntityName: "ScaleDescription", in: context)
-    let newDescription = NSManagedObject(entity: scaleDescriptionEntity!, insertInto: context)
+    let scaleImageEntity = NSEntityDescription.entity(forEntityName: "ScaleImages", in: context)
+    let newImage = NSManagedObject(entity: scaleImageEntity!, insertInto: context)
     
     //Adds All Scales Description to Core Data
-    newDescription.setValue(scaleDescriptionArray, forKey: "scaleDescriptionText")
+    newImage.setValue(majorData, forKey: "scaleImage")
     
-    //Fetch Scale Descriptions
+    //Fetch Scale Images
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleImages")
+    request.returnsObjectsAsFaults = false
     
-    //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleDescription")
-    //        request.returnsObjectsAsFaults = false
-    //
-    //        do {
-    //            let result = try context.fetch(request)
-    //
-    //            for data in result as! [NSManagedObject] {print(data.value(forKey: "scaleDescriptionText") as Any)}
-    //
-    //        } catch  {
-    //            print("Failed")
-    //        }
+    var selectedImageData:Data?
+    var selectedImage:UIImage?
+    
+    
+            do {
+                let result = try context.fetch(request)
+    
+                for data in result as! [NSManagedObject]{selectedImageData = data.value(forKey: "scaleImage") as? Data}
+                
+                selectedImage = UIImage(data: selectedImageData!)
+                print(selectedImage!)
+                
+
+    
+            } catch  {
+                print("Failed")
+            }
 }

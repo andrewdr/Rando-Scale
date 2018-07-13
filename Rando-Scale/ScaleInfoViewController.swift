@@ -29,7 +29,7 @@ class ScaleInfoViewController: UIViewController {
         scaleInfoText.text = majorText
         
         addDescriptionsToCoreData()
-        
+        addImagesoCoreData()
     }
     
 

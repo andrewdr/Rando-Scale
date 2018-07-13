@@ -6,6 +6,9 @@
     <entity name="ScaleDescription" representedClassName="ScaleDescription" syncable="YES" codeGenerationType="class">
         <attribute name="scaleDescriptionText" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="ScaleImages" representedClassName="ScaleImages" syncable="YES" codeGenerationType="class">
+        <attribute name="scaleImage" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="ScaleType" representedClassName="ScaleType" syncable="YES" codeGenerationType="class">
         <attribute name="major" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="minors" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -14,7 +17,8 @@
     </entity>
     <elements>
         <element name="Pitches" positionX="-63" positionY="-18" width="128" height="60"/>
-        <element name="ScaleType" positionX="-45" positionY="9" width="128" height="105"/>
         <element name="ScaleDescription" positionX="-54" positionY="27" width="128" height="60"/>
+        <element name="ScaleType" positionX="-45" positionY="9" width="128" height="105"/>
+        <element name="ScaleImages" positionX="-45" positionY="36" width="128" height="60"/>
     </elements>
 </model>
