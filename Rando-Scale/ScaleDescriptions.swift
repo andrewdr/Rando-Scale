@@ -33,6 +33,8 @@ import CoreData
 
      var scaleDescriptionArray:[String] = [majorText, naturalMinorText, harmonicMinorText, melodicMinorText, bluesText, phrygianText, lydianText, mixolydianText, lydianDomText, locrianText, chromaticText, octaWholeText, octaHalfText, wholeToneText]
 
+    var sendDescription: String?
+
     func addDescriptionsToCoreData(){
         //Add ScaleDescription Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -45,17 +47,26 @@ import CoreData
         
         //Fetch Scale Descriptions
         
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleDescription")
-//        request.returnsObjectsAsFaults = false
-//        
-//        do {
-//            let result = try context.fetch(request)
-//            
-//            for data in result as! [NSManagedObject] {print(data.value(forKey: "scaleDescriptionText") as Any)}
-//            
-//        } catch  {
-//            print("Failed")
-//        }
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleDescription")
+        request.returnsObjectsAsFaults = false
+        
+        var allScaleDescriptions = [String]()
+        var finalDescription = ""
+        
+        do {
+            let result = try context.fetch(request)
+            
+            for data in result as! [NSManagedObject] {allScaleDescriptions = data.value(forKey: "scaleDescriptionText") as! [String]}
+            
+            finalDescription = allScaleDescriptions[0]
+            
+            sendDescription = finalDescription
+            
+
+            
+        } catch  {
+            print("Failed")
+        }
     }
 
 

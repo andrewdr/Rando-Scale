@@ -52,7 +52,7 @@ func addImagesoCoreData(){
     let newImage = NSManagedObject(entity: scaleImageEntity!, insertInto: context)
     
     //Adds All Scales Description to Core Data
-    newImage.setValue(harmonicMinorData, forKey: "scaleImage")
+    newImage.setValue(majorData, forKey: "scaleImage")
     
     //Fetch Scale Images
     let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleImages")

@@ -126,6 +126,7 @@ var receivedScaleText = ""
                 
                 let ScaleInfo = segue.destination as! ScaleInfoViewController
                 ScaleInfo.receivedImage = sendImage
+                ScaleInfo.receivedDescription = sendDescription
                 
             }
             
