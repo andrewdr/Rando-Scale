@@ -112,6 +112,9 @@ func clearData(entity: String){
     let descriptionRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleDescription")
     descriptionRequest.returnsObjectsAsFaults = false
     
+    let imageRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleImages")
+    imageRequest.returnsObjectsAsFaults = false
+    
     do{
         let result = try context.fetch(request)
         for data in result as! [NSManagedObject] {context.delete(data)}
@@ -121,6 +124,9 @@ func clearData(entity: String){
         
         let descriptionResult = try  context.fetch(pitchRequest)
         for data in descriptionResult as! [NSManagedObject]{context.delete(data)}
+        
+        let imageResult = try context.fetch(imageRequest)
+        for data in imageResult as! [NSManagedObject]{context.delete(data)}
         
     } catch{
         

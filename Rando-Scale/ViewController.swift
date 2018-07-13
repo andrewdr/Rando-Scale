@@ -64,6 +64,9 @@ var receivedScaleText = ""
 
         clearData(entity: "ScaleType")
         
+        addDescriptionsToCoreData()
+        addImagesoCoreData()
+        
         
         //Add Scale Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -116,8 +119,18 @@ var receivedScaleText = ""
         }
 
     }
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+            if segue.identifier == "scaleInfo"{
+                
+                let ScaleInfo = segue.destination as! ScaleInfoViewController
+                ScaleInfo.receivedImage = sendImage
+                
+            }
+            
+        }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

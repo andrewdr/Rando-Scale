@@ -210,7 +210,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="tJc-b7-xUW" kind="show" id="wv6-4D-min"/>
+                                    <segue destination="tJc-b7-xUW" kind="show" identifier="scaleInfo" id="wv6-4D-min"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuD-WO-Mhk">
