@@ -11,6 +11,7 @@ import UIKit
 
 class ScaleInfoViewController: UIViewController {
     
+    var receivedScaleLabel:String?
     var receivedImage:UIImage?
     var receivedDescription:String?
     
@@ -25,6 +26,7 @@ class ScaleInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scaleInfoLabel.text = receivedScaleLabel
         scaleImage.image = receivedImage
         scaleInfoText.text = receivedDescription
     }

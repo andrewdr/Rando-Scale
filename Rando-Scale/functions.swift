@@ -99,7 +99,7 @@ func removeScales(dataKey: String){
 }
 
 //Clear Core Data
-func clearData(entity: String){
+func clearData(){
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext

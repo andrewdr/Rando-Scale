@@ -9,16 +9,13 @@
 import UIKit
 import CoreData
 
+
 var receivedScaleText = ""
-
-
+var sendScaleText = ""
 
 
     class ViewController: UIViewController{
         
-
-        
-    
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
     
@@ -37,7 +34,7 @@ var receivedScaleText = ""
         getScales()
     }
     
-    //Get Randome Note
+    //Get Random Note
     func getRandomNote(){
         
         let currentPitch = noteNameLabel.text
@@ -50,19 +47,18 @@ var receivedScaleText = ""
         noteNameLabel.text = nextPitch
     }
     
+    //Get Random Scale
     func getScales(){
-        
         getFinalScale()
         scaleTypeLabel.text = receivedScaleText
-        
-        
+        sendScaleText = receivedScaleText
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clearData(entity: "ScaleType")
+        clearData()
         
         addDescriptionsToCoreData()
         addImagesoCoreData()
@@ -94,39 +90,19 @@ var receivedScaleText = ""
         } catch {
             print("Failed Saving")
         }
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleType")
-        request.returnsObjectsAsFaults = false
-        
-        let pitchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Pitches")
-        pitchRequest.returnsObjectsAsFaults = false
-        
-        //Fetch Scale Types and Pitches
-        do {
-            let result = try context.fetch(request)
-            
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "major") as Any)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "minors") as Any)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "modes") as Any)}
-            for data in result as! [NSManagedObject] {print(data.value(forKey: "symmetrics") as Any)}
-            
-            let pitchResult = try pitchContext.fetch(pitchRequest)
-            for data in pitchResult as! [NSManagedObject] {print(data.value(forKey: "pitch") as Any)}
-            
-            
-        } catch  {
-            print("Failed")
-        }
 
     }
-        
+        //Send Scale Label, Image, and Description to ScaleInfo View
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
             if segue.identifier == "scaleInfo"{
                 
                 let ScaleInfo = segue.destination as! ScaleInfoViewController
+                
+                ScaleInfo.receivedScaleLabel = sendScaleText
                 ScaleInfo.receivedImage = sendImage
                 ScaleInfo.receivedDescription = sendDescription
+                
                 
             }
             
