@@ -7,42 +7,106 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+
+var receivedScaleText = ""
+var sendScaleText = ""
+
+
+    class ViewController: UIViewController{
+        
     @IBOutlet weak var noteNameLabel: UILabel!
     @IBOutlet weak var scaleTypeLabel: UILabel!
-    @IBOutlet weak var scaleTableView: UITableView!
     
+
+    let pitches:Array = ["A♭", "A", "B♭", "B", "C", "D♭", "D", "E♭", "E", "F", "F♯", "G",]
     let scaleTypes = ["Major Scales", "Minor Scales", "Modes", "Symmetrics"]
+    let majorScales:Array = ["Major"]
+    let minorScales:Array = ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Blues"]
+    let modes:Array = ["Dorian", "Phrygian", "Lydian", "Lydian Dominant", "Mixolydian", "Locrian"]
+    let symmetrics:Array = ["Whole Tone", "Chromatic", "Octatonic(W)", "Octatonic(H)"]
+    var randomScale = [] as Array
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        return 4
-        
+    
+    @IBAction func randomScaleButton(_ sender: Any) {
+        getRandomNote()
+        getScales()
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    //Get Random Note
+    func getRandomNote(){
         
-        let cell = scaleTableView.dequeueReusableCell(withIdentifier: "scaleTypeCell")
+        let currentPitch = noteNameLabel.text
+        var nextPitch = pitches.randomElement()
         
-        cell?.textLabel?.text = scaleTypes[indexPath.row]
-        cell?.textLabel?.textAlignment = .center
+        while currentPitch == nextPitch {
+            nextPitch = pitches.randomElement()
+        }
         
-        return cell!
-        
+        noteNameLabel.text = nextPitch
     }
     
- 
+    //Get Random Scale
+    func getScales(){
+        getFinalScale()
+        scaleTypeLabel.text = receivedScaleText
+        sendScaleText = receivedScaleText
+    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scaleTableView.delegate = self
-        scaleTableView.dataSource = self
-        scaleTableView.tableFooterView = UIView(frame: .zero)
+
+        clearData()
+        
+        addDescriptionsToCoreData()
+        addImagesoCoreData()
+        
+        
+        //Add Scale Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let scaleTypeEntity = NSEntityDescription.entity(forEntityName: "ScaleType", in: context)
+        let newScale = NSManagedObject(entity: scaleTypeEntity!, insertInto: context)
+        
+        //Adds All ScalesTypes to Core Data
+        newScale.setValue(majorScales, forKey: "major")
+        newScale.setValue(minorScales, forKey: "minors")
+        newScale.setValue(modes, forKey: "modes")
+        newScale.setValue(symmetrics, forKey: "symmetrics")
+        
+        //Adds Pitch Delegate
+        let pitchContext = appDelegate.persistentContainer.viewContext
+        let pitchEntity = NSEntityDescription.entity(forEntityName: "Pitches", in: pitchContext)
+        let allPitches = NSManagedObject(entity: pitchEntity!, insertInto: pitchContext)
+        
+        //Adds all pitches to Core Data
+        allPitches.setValue(pitches, forKey: "pitch")
+        
+        do {
+            try context.save()
+            try pitchContext.save()
+        } catch {
+            print("Failed Saving")
+        }
+
     }
+        //Send Scale Label, Image, and Description to ScaleInfo View
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+            if segue.identifier == "scaleInfo"{
+                
+                let ScaleInfo = segue.destination as! ScaleInfoViewController
+                
+                ScaleInfo.receivedScaleLabel = sendScaleText
+                ScaleInfo.receivedImage = sendImage
+                ScaleInfo.receivedDescription = sendDescription
+                
+                
+            }
+            
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

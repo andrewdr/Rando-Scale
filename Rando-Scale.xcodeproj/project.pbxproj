@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D333699D20D9EA5100F54D4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D333699C20D9EA5100F54D4C /* Default-568h@2x.png */; };
+		D33369DC20E0240900F54D4C /* ScaleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33369DB20E0240900F54D4C /* ScaleTypes.swift */; };
+		D33369DE20E5C14000F54D4C /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33369DD20E5C14000F54D4C /* functions.swift */; };
+		D33E8B4C20F1359C007A138B /* ScaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */; };
+		D34A596220F72A3C00280C1D /* ScaleDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */; };
+		D34A596420F8401600280C1D /* ScaleImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A596320F8401600280C1D /* ScaleImages.swift */; };
 		D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D7E20CF64F700441D10 /* AppDelegate.swift */; };
 		D3B93D8120CF64F700441D10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D8020CF64F700441D10 /* ViewController.swift */; };
 		D3B93D8420CF64F700441D10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B93D8220CF64F700441D10 /* Main.storyboard */; };
@@ -15,6 +21,7 @@
 		D3B93D8C20CF64F900441D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B93D8A20CF64F900441D10 /* LaunchScreen.storyboard */; };
 		D3B93D9720CF64F900441D10 /* Rando_ScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D9620CF64F900441D10 /* Rando_ScaleTests.swift */; };
 		D3B93DA220CF64F900441D10 /* Rando_ScaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */; };
+		D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D333699C20D9EA5100F54D4C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D33369DB20E0240900F54D4C /* ScaleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTypes.swift; sourceTree = "<group>"; };
+		D33369DD20E5C14000F54D4C /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScaleTableViewController.swift; path = "Rando-Scale/ScaleTableViewController.swift"; sourceTree = "<group>"; };
+		D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleDescriptions.swift; sourceTree = "<group>"; };
+		D34A596320F8401600280C1D /* ScaleImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleImages.swift; sourceTree = "<group>"; };
 		D3B93D7B20CF64F700441D10 /* Rando-Scale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rando-Scale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B93D7E20CF64F700441D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B93D8020CF64F700441D10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +62,7 @@
 		D3B93D9D20CF64F900441D10 /* Rando-ScaleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rando-ScaleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rando_ScaleUITests.swift; sourceTree = "<group>"; };
 		D3B93DA320CF64F900441D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,8 @@
 		D3B93D7220CF64F700441D10 = {
 			isa = PBXGroup;
 			children = (
+				D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */,
+				D333699C20D9EA5100F54D4C /* Default-568h@2x.png */,
 				D3B93D7D20CF64F700441D10 /* Rando-Scale */,
 				D3B93D9520CF64F900441D10 /* Rando-ScaleTests */,
 				D3B93DA020CF64F900441D10 /* Rando-ScaleUITests */,
@@ -101,11 +117,16 @@
 			children = (
 				D3B93D7E20CF64F700441D10 /* AppDelegate.swift */,
 				D3B93D8020CF64F700441D10 /* ViewController.swift */,
+				D33369DB20E0240900F54D4C /* ScaleTypes.swift */,
+				D33369DD20E5C14000F54D4C /* functions.swift */,
 				D3B93D8220CF64F700441D10 /* Main.storyboard */,
+				D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */,
 				D3B93D8820CF64F900441D10 /* Assets.xcassets */,
 				D3B93D8A20CF64F900441D10 /* LaunchScreen.storyboard */,
 				D3B93D8D20CF64F900441D10 /* Info.plist */,
 				D3B93D8520CF64F700441D10 /* Rando_Scale.xcdatamodeld */,
+				D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */,
+				D34A596320F8401600280C1D /* ScaleImages.swift */,
 			);
 			path = "Rando-Scale";
 			sourceTree = "<group>";
@@ -196,13 +217,16 @@
 				TargetAttributes = {
 					D3B93D7A20CF64F700441D10 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 					};
 					D3B93D9120CF64F900441D10 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 						TestTargetID = D3B93D7A20CF64F700441D10;
 					};
 					D3B93D9C20CF64F900441D10 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1000;
 						TestTargetID = D3B93D7A20CF64F700441D10;
 					};
 				};
@@ -233,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B93D8C20CF64F900441D10 /* LaunchScreen.storyboard in Resources */,
+				D333699D20D9EA5100F54D4C /* Default-568h@2x.png in Resources */,
 				D3B93D8920CF64F900441D10 /* Assets.xcassets in Resources */,
 				D3B93D8420CF64F700441D10 /* Main.storyboard in Resources */,
 			);
@@ -259,8 +284,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33E8B4C20F1359C007A138B /* ScaleTableViewController.swift in Sources */,
+				D34A596420F8401600280C1D /* ScaleImages.swift in Sources */,
+				D33369DC20E0240900F54D4C /* ScaleTypes.swift in Sources */,
+				D33369DE20E5C14000F54D4C /* functions.swift in Sources */,
 				D3B93D8120CF64F700441D10 /* ViewController.swift in Sources */,
 				D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */,
+				D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */,
+				D34A596220F72A3C00280C1D /* ScaleDescriptions.swift in Sources */,
 				D3B93D8720CF64F700441D10 /* Rando_Scale.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-Scale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -461,7 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-Scale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -481,7 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-ScaleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rando-Scale.app/Rando-Scale";
 			};
@@ -502,7 +533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-ScaleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rando-Scale.app/Rando-Scale";
 			};
@@ -522,7 +553,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-ScaleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Rando-Scale";
 			};
@@ -542,7 +573,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adraper.Rando-ScaleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Rando-Scale";
 			};
