@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rando-Scale/ViewController.swift"
-            timestampString = "552540015.835372"
+            timestampString = "553229506.832665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "getRandomNote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rando-Scale/ViewController.swift"
-            timestampString = "552540015.835749"
+            timestampString = "553229506.833019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "randomScaleButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
