@@ -44,10 +44,12 @@ func getSelectedScales(dataKey: String){
 // Select Final Scale from Randomized Array
 func getFinalScale(){
     
+    let randomNumber = Int(arc4random_uniform(UInt32(totalScaleArray.count)))
+    
     var randomScaleType = [String]()
     var finalRandomScale = ""
     
-    randomScaleType = [totalScaleArray.randomElement()] as! [String]
+    randomScaleType = [totalScaleArray[randomNumber]]
     
     
     finalRandomScale = randomScaleType[0]

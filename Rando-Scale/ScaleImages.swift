@@ -11,15 +11,18 @@ import UIKit
 import CoreData
 
 
-let majorImage:UIImage = #imageLiteral(resourceName: "c-major")
-let majorData = majorImage.pngData()
+
+let majorImage: UIImage = #imageLiteral(resourceName: "c-major")
+var majorData: Data = UIImagePNGRepresentation(majorImage)!
+
+//var imageUIImage: UIImage = UIImage(data: majorImageData)!
 
 let naturalMinorImage:UIImage  = #imageLiteral(resourceName: "c-natural-minor")
-let naturalMinorData = naturalMinorImage.pngData()
+let naturalMinorData:Data = UIImagePNGRepresentation(naturalMinorImage)!
 
 
 let harmonicMinorImage:UIImage  = #imageLiteral(resourceName: "c-harmonic-minor")
-let harmonicMinorData = harmonicMinorImage.pngData()
+let harmonicMinorData:Data = UIImagePNGRepresentation(harmonicMinorImage)!
 
 let melodicMinorImage:UIImage  = #imageLiteral(resourceName: "c-melodic-minor")
 let bluesImage:UIImage  = #imageLiteral(resourceName: "blues")
@@ -42,7 +45,7 @@ var sendImage:UIImage?
 
 
 
-var scaleImageArray:[Data] = [majorData!, naturalMinorData!, harmonicMinorData!]
+var scaleImageArray:[Data] = [majorData, naturalMinorData, harmonicMinorData]
 
 func addImagesoCoreData(){
     //Add ScaleDescription Delegate
@@ -60,7 +63,6 @@ func addImagesoCoreData(){
     
     var selectedImageData:Data?
     var selectedImage:UIImage?
-    
     
             do {
                 let result = try context.fetch(request)
