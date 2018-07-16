@@ -15,7 +15,7 @@ var sentScaleText = ""
 
 //Add possible scales to array via table switches
 func getSelectedScales(dataKey: String){
-
+    
     do{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -27,37 +27,56 @@ func getSelectedScales(dataKey: String){
     let result = try context.fetch(request)
     
     var selectedScaleArray = [String]()
-  
-    
+        
         for data in result as! [NSManagedObject] {selectedScaleArray = data.value(forKey: dataKey) as! [String]}
-    
-    totalScaleArray.append(contentsOf: selectedScaleArray)
         
+        totalScaleArray.append(contentsOf: selectedScaleArray)
         print(totalScaleArray)
-
         
+//        if selectedScaleArray.isEmpty{
+//
+//            totalScaleArray = ["Major"]
+//        }else{
+//
+//            totalScaleArray.append(contentsOf: selectedScaleArray)
+//            print(totalScaleArray)
+//        }
+  
     }catch{
         print("An Error Ocurred")
     }
+    
 }
 
 // Select Final Scale from Randomized Array
 func getFinalScale(){
     
-    let randomNumber = Int(arc4random_uniform(UInt32(totalScaleArray.count)))
-    
     var randomScaleType = [String]()
     var finalRandomScale = ""
     
-    randomScaleType = [totalScaleArray[randomNumber]]
+    if totalScaleArray.isEmpty{
+        finalRandomScale = "Major"
+        sentScaleText = finalRandomScale
+        receivedScaleText = sentScaleText
+    }else{
+    
+        let randomScaleNumber = Int(arc4random_uniform(UInt32(totalScaleArray.count)))
+        
+        print("Random Scale Number is \(randomScaleNumber)")
+        
+        randomScaleType = [totalScaleArray[randomScaleNumber]]
+        
+        print("Random Scale Type is \(randomScaleType)")
+        
+        finalRandomScale = String(randomScaleType[0])
+        
+        print(finalRandomScale)
+        sentScaleText = finalRandomScale
+        receivedScaleText = sentScaleText
+        
+    }
     
     
-    finalRandomScale = randomScaleType[0]
-    
-    print(finalRandomScale)
-    
-    sentScaleText = finalRandomScale
-    receivedScaleText = sentScaleText
 }
 
 // Remove Scales from Randomized Array

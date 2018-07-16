@@ -49,17 +49,17 @@ class ScaleTableViewController: UITableViewController {
         }
     }
     
-    func switchesOff(){
-        if majorSwitich.isOn == false &&
-           minorSwitch.isOn == false &&
-           modesSwitch.isOn == false &&
-           symmetricsSwitch.isOn == false
-        {
-            getSelectedScales(dataKey: "major")
-        }else{
-            removeScales(dataKey: "major")
-        }
-    }
+//    func switchesOff(){
+//        if majorSwitich.isOn == false &&
+//           minorSwitch.isOn == false &&
+//           modesSwitch.isOn == false &&
+//           symmetricsSwitch.isOn == false
+//        {
+//            getSelectedScales(dataKey: "major")
+//        }else{
+//            removeScales(dataKey: "major")
+//        }
+//    }
     
 
     
@@ -68,7 +68,7 @@ class ScaleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switchesOff()
+//        switchesOff()
 
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         

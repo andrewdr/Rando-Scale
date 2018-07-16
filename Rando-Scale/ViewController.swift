@@ -37,13 +37,15 @@ var sendScaleText = ""
     //Get Random Note
     func getRandomNote(){
         
-        let randomNumber = Int(arc4random_uniform(UInt32(pitches.count)))
+        let pitchRandomNumber = Int(arc4random_uniform(UInt32(11)))
+        
+        print("Random Pitch Number is \(pitchRandomNumber)")
         
         let currentPitch = noteNameLabel.text
-        var nextPitch = pitches[randomNumber]
+        var nextPitch = pitches[pitchRandomNumber]
         
         while currentPitch == nextPitch {
-            nextPitch = pitches[randomNumber]
+            nextPitch = pitches[pitchRandomNumber]
         }
         
         noteNameLabel.text = nextPitch
