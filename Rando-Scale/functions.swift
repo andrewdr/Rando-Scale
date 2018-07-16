@@ -58,19 +58,19 @@ func getFinalScale(){
         finalRandomScale = "Major"
         sentScaleText = finalRandomScale
         receivedScaleText = sentScaleText
+        print("Final random scale is \(finalRandomScale)")
+        
     }else{
     
         let randomScaleNumber = Int(arc4random_uniform(UInt32(totalScaleArray.count)))
         
-        print("Random Scale Number is \(randomScaleNumber)")
         
         randomScaleType = [totalScaleArray[randomScaleNumber]]
         
-        print("Random Scale Type is \(randomScaleType)")
         
         finalRandomScale = String(randomScaleType[0])
         
-        print(finalRandomScale)
+        print("Final random scale is \(finalRandomScale)")
         sentScaleText = finalRandomScale
         receivedScaleText = sentScaleText
         

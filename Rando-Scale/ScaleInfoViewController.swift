@@ -20,11 +20,26 @@ class ScaleInfoViewController: UIViewController {
     @IBOutlet weak var scaleInfoText: UITextView!
     
     
+    var imageFileName:String?
+    
+    func makeLowercase(scaleName:String){
+        
+        var lowerCaseName:String = "lowercase"
+        var fileName:String = "c-major"
+        
+        lowerCaseName = scaleName.lowercased()
+        
+        fileName = "c-\(lowerCaseName)"
+        
+        print(fileName)
+    }
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        makeLowercase(scaleName: receivedScaleLabel!)
         
         scaleInfoLabel.text = receivedScaleLabel
         scaleImage.image = receivedImage
