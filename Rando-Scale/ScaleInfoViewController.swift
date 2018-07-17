@@ -33,6 +33,15 @@ class ScaleInfoViewController: UIViewController {
         
         print(fileName)
     }
+    
+    func getLabelText(){
+        
+        if (receivedScaleLabel?.isEmpty)!{
+            scaleInfoLabel.text = "Major"
+        }else{
+            scaleInfoLabel.text = receivedScaleLabel
+        }
+    }
 
     
 
@@ -41,7 +50,8 @@ class ScaleInfoViewController: UIViewController {
         
         makeLowercase(scaleName: receivedScaleLabel!)
         
-        scaleInfoLabel.text = receivedScaleLabel
+        
+        getLabelText()
         scaleImage.image = receivedImage
         scaleInfoText.text = receivedDescription
     }
