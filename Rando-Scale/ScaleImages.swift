@@ -15,8 +15,6 @@ import CoreData
 let majorImage: UIImage = #imageLiteral(resourceName: "c-major")
 var majorData: Data = UIImagePNGRepresentation(majorImage)!
 
-//var imageUIImage: UIImage = UIImage(data: majorImageData)!
-
 let naturalMinorImage:UIImage  = #imageLiteral(resourceName: "c-natural-minor")
 let naturalMinorData:Data = UIImagePNGRepresentation(naturalMinorImage)!
 
@@ -37,12 +35,6 @@ let ocatonicWholeImage:UIImage  = #imageLiteral(resourceName: "octatonic-whole")
 let ocatonicHalfImage:UIImage  = #imageLiteral(resourceName: "octatonic-half")
 let wholeToneImage:UIImage  = #imageLiteral(resourceName: "whole-tone")
 
-var sendImage:UIImage?
-
-
-
-
-
 
 
 var scaleImageArray:[Data] = [majorData, naturalMinorData, harmonicMinorData]
@@ -57,28 +49,6 @@ func addImagesoCoreData(){
     //Adds All Scales Description to Core Data
     newImage.setValue(majorData, forKey: "scaleImage")
     
-    //Fetch Scale Images
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ScaleImages")
-    request.returnsObjectsAsFaults = false
-    
-    var selectedImageData:Data?
-    var selectedImage:UIImage?
-    
-            do {
-                let result = try context.fetch(request)
-    
-                for data in result as! [NSManagedObject]{selectedImageData = data.value(forKey: "scaleImage") as? Data}
-                
-                selectedImage = UIImage(data: selectedImageData!)
-                sendImage = selectedImage
-                
-                print(sendImage!)
-                
-
-    
-            } catch  {
-                print("Failed")
-            }
 }
 
 

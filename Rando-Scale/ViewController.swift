@@ -68,8 +68,6 @@ var sendScaleText = ""
         addImagesoCoreData()
         
       
-        
-        
         //Add Scale Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -106,10 +104,7 @@ var sendScaleText = ""
                 let ScaleInfo = segue.destination as! ScaleInfoViewController
                 
                 ScaleInfo.receivedScaleLabel = sendScaleText
-                ScaleInfo.receivedImage = sendImage
-//                ScaleInfo.receivedDescription = sendDescription
-                
-                
+
             }
             
         }

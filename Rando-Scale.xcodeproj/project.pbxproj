@@ -21,7 +21,7 @@
 		D3B93D9720CF64F900441D10 /* Rando_ScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93D9620CF64F900441D10 /* Rando_ScaleTests.swift */; };
 		D3B93DA220CF64F900441D10 /* Rando_ScaleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */; };
 		D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */; };
-		D3C2245320FD8C95004FED7A /* ScaleDescriptionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2245220FD8C95004FED7A /* ScaleDescriptionDictionary.swift */; };
+		D3C2245520FDBB93004FED7A /* ScaleDictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2245420FDBB93004FED7A /* ScaleDictionaries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		D3B93DA120CF64F900441D10 /* Rando_ScaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rando_ScaleUITests.swift; sourceTree = "<group>"; };
 		D3B93DA320CF64F900441D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BDD01D20F5DDD800196E0D /* ScaleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInfoViewController.swift; sourceTree = "<group>"; };
-		D3C2245220FD8C95004FED7A /* ScaleDescriptionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleDescriptionDictionary.swift; sourceTree = "<group>"; };
+		D3C2245420FDBB93004FED7A /* ScaleDictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleDictionaries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 				D3B93D8D20CF64F900441D10 /* Info.plist */,
 				D3B93D8520CF64F700441D10 /* Rando_Scale.xcdatamodeld */,
 				D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */,
-				D3C2245220FD8C95004FED7A /* ScaleDescriptionDictionary.swift */,
+				D3C2245420FDBB93004FED7A /* ScaleDictionaries.swift */,
 				D34A596320F8401600280C1D /* ScaleImages.swift */,
 			);
 			path = "Rando-Scale";
@@ -290,8 +290,8 @@
 				D3B93D8120CF64F700441D10 /* ViewController.swift in Sources */,
 				D3B93D7F20CF64F700441D10 /* AppDelegate.swift in Sources */,
 				D3BDD01E20F5DDD800196E0D /* ScaleInfoViewController.swift in Sources */,
+				D3C2245520FDBB93004FED7A /* ScaleDictionaries.swift in Sources */,
 				D34A596220F72A3C00280C1D /* ScaleDescriptions.swift in Sources */,
-				D3C2245320FD8C95004FED7A /* ScaleDescriptionDictionary.swift in Sources */,
 				D3B93D8720CF64F700441D10 /* Rando_Scale.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
