@@ -13,7 +13,7 @@ class ScaleInfoViewController: UIViewController {
     
     var receivedScaleLabel:String?
     var receivedImage:UIImage?
-    var receivedDescription:String?
+//    var receivedDescription:String?
     
     @IBOutlet weak var scaleInfoLabel: UILabel!
     @IBOutlet weak var scaleImage: UIImageView!
@@ -41,6 +41,18 @@ class ScaleInfoViewController: UIViewController {
         }else{
             scaleInfoLabel.text = receivedScaleLabel
         }
+        
+    }
+    
+    func getDescription(){
+        
+        var scaleDescription = "Scale Description Here"
+        
+        scaleDescription = descriptionDictionary[scaleInfoLabel.text!]!
+        
+        print(scaleDescription)
+        
+        scaleInfoText.text = scaleDescription
     }
 
     
@@ -52,8 +64,9 @@ class ScaleInfoViewController: UIViewController {
         
         
         getLabelText()
+        getDescription()
         scaleImage.image = receivedImage
-        scaleInfoText.text = receivedDescription
+//        scaleInfoText.text = receivedDescription
     }
     
 

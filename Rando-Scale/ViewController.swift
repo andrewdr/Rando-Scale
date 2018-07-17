@@ -107,7 +107,7 @@ var sendScaleText = ""
                 
                 ScaleInfo.receivedScaleLabel = sendScaleText
                 ScaleInfo.receivedImage = sendImage
-                ScaleInfo.receivedDescription = sendDescription
+//                ScaleInfo.receivedDescription = sendDescription
                 
                 
             }
