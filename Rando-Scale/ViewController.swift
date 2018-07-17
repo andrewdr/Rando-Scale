@@ -67,6 +67,8 @@ var sendScaleText = ""
         addDescriptionsToCoreData()
         addImagesoCoreData()
         
+      
+        
         
         //Add Scale Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
