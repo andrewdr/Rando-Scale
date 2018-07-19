@@ -49,6 +49,7 @@ class ScaleInfoViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     
+    
     @IBAction func playButton(_ sender: Any) {
         musicPlayer.play()
     }
@@ -92,6 +93,7 @@ class ScaleInfoViewController: UIViewController {
             print(songPlayerError)
         }
         
+        musicTimer()
         
     }
     
@@ -107,8 +109,7 @@ class ScaleInfoViewController: UIViewController {
     func musicTimer(){
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
-        
-//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setter: progressBar), userInfo: nil, repeats: true)
+
         progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: false)
     }
     
@@ -122,8 +123,8 @@ class ScaleInfoViewController: UIViewController {
         getImages()
         prepSong()
         
-        musicTimer()
-
+//        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 10)
+        
     }
     
 }
