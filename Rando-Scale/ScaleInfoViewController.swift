@@ -47,6 +47,8 @@ class ScaleInfoViewController: UIViewController {
     var musicIsPaused = true
     
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var musicCountdown: UILabel!
+    
     
     
     
@@ -111,7 +113,24 @@ class ScaleInfoViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
 
         progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: false)
+        
+        musicCountdown.text = String(musicPlayer.duration - musicPlayer.currentTime)
     }
+    
+    // Music Countdown Timer
+//    
+//    var timer = Timer()
+//    var timerIsOn = false
+//    
+//    func timerRunning(){
+//        
+//        var timeRemaining = 100.0
+//        
+//        timeRemaining -= 1.0
+//        
+//        
+//        
+//    }
     
     
 

@@ -464,6 +464,12 @@
                                     <constraint firstAttribute="height" constant="10" id="kzB-nQ-5vo"/>
                                 </constraints>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhV-9M-yxg">
+                                <rect key="frame" x="321" y="517" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -483,9 +489,11 @@
                             <constraint firstItem="gCW-Wp-jZX" firstAttribute="top" secondItem="xAq-fT-txf" secondAttribute="bottom" constant="93" id="99E-gq-QiQ"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="CfO-0S-7GK"/>
                             <constraint firstItem="hI7-rc-OsN" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="16" id="EjQ-Cq-p1B"/>
+                            <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="nhV-9M-yxg" secondAttribute="trailing" constant="16" id="HVQ-ER-FEc"/>
                             <constraint firstItem="cNG-aQ-KtS" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" id="Hxz-Pl-7RE"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="top" secondItem="aNq-uA-6gr" secondAttribute="top" constant="38" id="IMh-Na-VZ8"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Lhu-QV-i1e"/>
+                            <constraint firstItem="nhV-9M-yxg" firstAttribute="top" secondItem="gCW-Wp-jZX" secondAttribute="bottom" constant="1" id="MKB-lu-Tzc"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Rcl-9y-F3E"/>
                             <constraint firstItem="cY0-Nw-WKo" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="U1e-Bj-ZvO"/>
                             <constraint firstItem="gCW-Wp-jZX" firstAttribute="top" secondItem="cY0-Nw-WKo" secondAttribute="bottom" constant="49" id="WIZ-L6-YPP"/>
@@ -496,6 +504,7 @@
                             </constraint>
                             <constraint firstItem="cNG-aQ-KtS" firstAttribute="top" secondItem="gCW-Wp-jZX" secondAttribute="bottom" constant="115" id="gTJ-av-ksK"/>
                             <constraint firstItem="cNG-aQ-KtS" firstAttribute="trailing" secondItem="aNq-uA-6gr" secondAttribute="trailing" id="ghn-Eg-rZi"/>
+                            <constraint firstItem="cNG-aQ-KtS" firstAttribute="top" secondItem="nhV-9M-yxg" secondAttribute="bottom" constant="93" id="gvi-Qk-qLU"/>
                             <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="hI7-rc-OsN" secondAttribute="trailing" constant="16" id="h4w-5B-CpE"/>
                             <constraint firstItem="gCW-Wp-jZX" firstAttribute="leading" secondItem="xAq-fT-txf" secondAttribute="leading" id="hz3-Te-bO6"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="top" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="8" id="len-Rh-4Ll"/>
@@ -548,6 +557,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Scale Info" id="ekN-MH-PWh"/>
                     <connections>
+                        <outlet property="musicCountdown" destination="nhV-9M-yxg" id="bGe-Cg-Neg"/>
                         <outlet property="progressBar" destination="gCW-Wp-jZX" id="TOS-6I-vbJ"/>
                         <outlet property="scaleImage" destination="hI7-rc-OsN" id="NtV-rG-vu7"/>
                         <outlet property="scaleInfoLabel" destination="K5v-lg-3sK" id="vi4-ge-2er"/>
