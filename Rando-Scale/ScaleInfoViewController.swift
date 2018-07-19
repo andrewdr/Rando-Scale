@@ -46,6 +46,9 @@ class ScaleInfoViewController: UIViewController {
     var musicPlayer = AVAudioPlayer()
     var musicIsPaused = true
     
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    
     @IBAction func playButton(_ sender: Any) {
         musicPlayer.play()
     }
@@ -88,6 +91,25 @@ class ScaleInfoViewController: UIViewController {
         }catch let songPlayerError{
             print(songPlayerError)
         }
+        
+        
+    }
+    
+    @objc func updateProgressBar(){
+        
+        if musicPlayer.isPlaying{
+            progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: true)
+        }
+        
+    }
+    
+    
+    func musicTimer(){
+        
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
+        
+//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setter: progressBar), userInfo: nil, repeats: true)
+        progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: false)
     }
     
     
@@ -99,6 +121,8 @@ class ScaleInfoViewController: UIViewController {
         getDescription()
         getImages()
         prepSong()
+        
+        musicTimer()
 
     }
     
