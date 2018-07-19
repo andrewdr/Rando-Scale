@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAx-OO-Mus">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAx-OO-Mus">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,13 +31,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-1D-cVM">
-                                                    <rect key="frame" x="957" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="308" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addMajors:" destination="RLL-QU-DaN" eventType="valueChanged" id="V1F-um-X6w"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-mS-yPC">
-                                                    <rect key="frame" x="490.5" y="11" width="43" height="21"/>
+                                                    <rect key="frame" x="166" y="11" width="43" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,13 +65,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="psm-4r-qdA">
-                                                    <rect key="frame" x="959" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addMinors:" destination="RLL-QU-DaN" eventType="valueChanged" id="9CA-jD-m7o"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74b-oq-ONJ">
-                                                    <rect key="frame" x="486" y="11" width="52" height="21"/>
+                                                    <rect key="frame" x="161.5" y="11" width="52" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,13 +95,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2O9-5a-Wit">
-                                                    <rect key="frame" x="959" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addModes:" destination="RLL-QU-DaN" eventType="valueChanged" id="XL8-KS-5MJ"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ4-JI-Any">
-                                                    <rect key="frame" x="485.5" y="11" width="53" height="21"/>
+                                                    <rect key="frame" x="161" y="11" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -123,13 +125,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZWx-sc-IWr">
-                                                    <rect key="frame" x="959" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addSymmetrics:" destination="RLL-QU-DaN" eventType="valueChanged" id="Z4M-q3-ZO8"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symmetrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNZ-ko-Nbk">
-                                                    <rect key="frame" x="466.5" y="11" width="91" height="21"/>
+                                                    <rect key="frame" x="142" y="11" width="91" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -200,7 +202,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A♭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndz-EN-GTE">
-                                <rect key="frame" x="171" y="97" width="33" height="36"/>
+                                <rect key="frame" x="170.5" y="97" width="34" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -328,13 +330,13 @@
                                 <exclude reference="TjX-sx-9li"/>
                                 <exclude reference="YnM-Og-h6N"/>
                                 <exclude reference="wzC-HG-K3H"/>
+                                <exclude reference="7e8-M7-2aA"/>
+                                <exclude reference="rQy-sL-LQ7"/>
                                 <exclude reference="6Ks-GQ-WQ3"/>
                                 <exclude reference="CXv-9x-0cb"/>
                                 <exclude reference="Ecu-Zi-TZH"/>
                                 <exclude reference="jXL-Mc-EAP"/>
                                 <exclude reference="y2g-2H-scm"/>
-                                <exclude reference="7e8-M7-2aA"/>
-                                <exclude reference="rQy-sL-LQ7"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -369,6 +371,10 @@
                                 <exclude reference="cjD-LQ-L6R"/>
                                 <exclude reference="q2G-Zs-26p"/>
                                 <include reference="wzC-HG-K3H"/>
+                                <include reference="7e8-M7-2aA"/>
+                                <exclude reference="MMw-cN-ZfA"/>
+                                <include reference="rQy-sL-LQ7"/>
+                                <exclude reference="sIe-qo-nBx"/>
                                 <include reference="6Ks-GQ-WQ3"/>
                                 <include reference="CXv-9x-0cb"/>
                                 <include reference="Ecu-Zi-TZH"/>
@@ -376,10 +382,6 @@
                                 <exclude reference="TBk-LD-Slf"/>
                                 <include reference="jXL-Mc-EAP"/>
                                 <include reference="y2g-2H-scm"/>
-                                <include reference="7e8-M7-2aA"/>
-                                <exclude reference="MMw-cN-ZfA"/>
-                                <include reference="rQy-sL-LQ7"/>
-                                <exclude reference="sIe-qo-nBx"/>
                             </mask>
                         </variation>
                     </view>
@@ -428,6 +430,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-aQ-KtS">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Restart" id="iwr-O7-ivm">
+                                        <connections>
+                                            <action selector="restartButton:" destination="tJc-b7-xUW" id="L0Y-bI-OOk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wjY-oY-WUe"/>
+                                    <barButtonItem systemItem="pause" id="Dto-TW-E5Q">
+                                        <connections>
+                                            <action selector="pauseButton:" destination="tJc-b7-xUW" id="nT7-YH-Cm9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qha-bG-Yh0"/>
+                                    <barButtonItem systemItem="play" id="tDu-kF-rIe">
+                                        <connections>
+                                            <action selector="playButton:" destination="tJc-b7-xUW" id="Ipc-CF-LD9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -446,6 +470,7 @@
                             <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="xAq-fT-txf" secondAttribute="trailing" constant="16" id="7gG-SC-UVA"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="CfO-0S-7GK"/>
                             <constraint firstItem="hI7-rc-OsN" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" constant="16" id="EjQ-Cq-p1B"/>
+                            <constraint firstItem="cNG-aQ-KtS" firstAttribute="leading" secondItem="aNq-uA-6gr" secondAttribute="leading" id="Hxz-Pl-7RE"/>
                             <constraint firstItem="K5v-lg-3sK" firstAttribute="top" secondItem="aNq-uA-6gr" secondAttribute="top" constant="38" id="IMh-Na-VZ8"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Lhu-QV-i1e"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="centerX" secondItem="Dce-ZP-eEO" secondAttribute="centerX" id="Rcl-9y-F3E"/>
@@ -453,9 +478,11 @@
                             <constraint firstItem="hI7-rc-OsN" firstAttribute="top" secondItem="K5v-lg-3sK" secondAttribute="bottom" constant="25" id="eCf-LD-nWI">
                                 <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="cNG-aQ-KtS" firstAttribute="trailing" secondItem="aNq-uA-6gr" secondAttribute="trailing" id="ghn-Eg-rZi"/>
                             <constraint firstItem="aNq-uA-6gr" firstAttribute="trailing" secondItem="hI7-rc-OsN" secondAttribute="trailing" constant="16" id="h4w-5B-CpE"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="top" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="8" id="len-Rh-4Ll"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="leading" secondItem="Dce-ZP-eEO" secondAttribute="leadingMargin" id="mdp-2r-kN9"/>
+                            <constraint firstItem="cNG-aQ-KtS" firstAttribute="bottom" secondItem="aNq-uA-6gr" secondAttribute="bottom" id="pp0-HX-lY6"/>
                             <constraint firstItem="xAq-fT-txf" firstAttribute="top" secondItem="hI7-rc-OsN" secondAttribute="bottom" constant="13" id="rak-S1-x9B">
                                 <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                             </constraint>
@@ -467,12 +494,12 @@
                                 <exclude reference="4XW-wi-69X"/>
                                 <exclude reference="672-FB-RPT"/>
                                 <exclude reference="eCf-LD-nWI"/>
+                                <exclude reference="36P-En-w6A"/>
+                                <exclude reference="IMh-Na-VZ8"/>
                                 <exclude reference="3YC-5a-54F"/>
                                 <exclude reference="Lhu-QV-i1e"/>
                                 <exclude reference="mdp-2r-kN9"/>
                                 <exclude reference="rak-S1-x9B"/>
-                                <exclude reference="36P-En-w6A"/>
-                                <exclude reference="IMh-Na-VZ8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -486,6 +513,10 @@
                                 <include reference="672-FB-RPT"/>
                                 <exclude reference="EjQ-Cq-p1B"/>
                                 <include reference="eCf-LD-nWI"/>
+                                <include reference="36P-En-w6A"/>
+                                <exclude reference="6hD-hj-6Ab"/>
+                                <exclude reference="CfO-0S-7GK"/>
+                                <include reference="IMh-Na-VZ8"/>
                                 <include reference="3YC-5a-54F"/>
                                 <include reference="Lhu-QV-i1e"/>
                                 <exclude reference="Rcl-9y-F3E"/>
@@ -493,10 +524,6 @@
                                 <exclude reference="len-Rh-4Ll"/>
                                 <include reference="mdp-2r-kN9"/>
                                 <include reference="rak-S1-x9B"/>
-                                <include reference="36P-En-w6A"/>
-                                <exclude reference="6hD-hj-6Ab"/>
-                                <exclude reference="CfO-0S-7GK"/>
-                                <include reference="IMh-Na-VZ8"/>
                             </mask>
                         </variation>
                     </view>
