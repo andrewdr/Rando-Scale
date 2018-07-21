@@ -65,10 +65,12 @@ class ScaleInfoViewController: UIViewController {
     @IBAction func restartButton(_ sender: Any) {
         
         if musicPlayer.isPlaying{
-            musicPlayer.stop()
             musicPlayer.currentTime = 0
+            musicPlayer.play()
         }else if musicIsPaused {
-            musicPlayer.stop()
+            musicPlayer.currentTime = 0
+            musicPlayer.play()
+        }else if musicPlayer.isPlaying == false{
             musicPlayer.currentTime = 0
         }
         
@@ -102,13 +104,13 @@ class ScaleInfoViewController: UIViewController {
             progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: true)
         }
         
-        let totalTime = musicPlayer.duration - musicPlayer.currentTime
-        let minutes = Int(totalTime/60)
+        let totalTime = Int(musicPlayer.duration - musicPlayer.currentTime)
+        let minutes = totalTime/60
         
         let remainder = minutes.quotientAndRemainder(dividingBy: 60)
         let seconds = remainder
         
-        musicCountdown.text = ("\(minutes):\(seconds)" )
+        musicCountdown.text = ("\(minutes):\(totalTime)" )
     }
     
     var seconds = 0
