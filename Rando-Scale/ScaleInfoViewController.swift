@@ -49,9 +49,6 @@ class ScaleInfoViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var musicCountdown: UILabel!
     
-    
-    
-    
     @IBAction func playButton(_ sender: Any) {
         musicPlayer.play()
     }
@@ -105,6 +102,7 @@ class ScaleInfoViewController: UIViewController {
             progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: true)
         }
         
+        musicCountdown.text = String(musicPlayer.duration - musicPlayer.currentTime)
     }
     
     var seconds = 0
@@ -112,17 +110,15 @@ class ScaleInfoViewController: UIViewController {
     
     func musicTimer(){
         
-
-//        var isTimerRunning = false
-        
-        
        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressBar), userInfo: nil, repeats: true)
 
         progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: false)
         
-        seconds = Int(musicPlayer.duration - musicPlayer.currentTime)
         
-        musicCountdown.text = String(seconds)
+        
+//        seconds = Int(musicPlayer.duration - musicPlayer.currentTime)
+//
+//        musicCountdown.text = String(seconds)
         
         updateTimer()
         
