@@ -102,7 +102,13 @@ class ScaleInfoViewController: UIViewController {
             progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: true)
         }
         
-        musicCountdown.text = String(musicPlayer.duration - musicPlayer.currentTime)
+        let totalTime = musicPlayer.duration - musicPlayer.currentTime
+        let minutes = Int(totalTime/60)
+        
+        let remainder = minutes.quotientAndRemainder(dividingBy: 60)
+        let seconds = remainder
+        
+        musicCountdown.text = ("\(minutes):\(seconds)" )
     }
     
     var seconds = 0
@@ -114,18 +120,7 @@ class ScaleInfoViewController: UIViewController {
 
         progressBar.setProgress(Float(musicPlayer.currentTime/musicPlayer.duration), animated: false)
         
-        
-        
-//        seconds = Int(musicPlayer.duration - musicPlayer.currentTime)
-//
-//        musicCountdown.text = String(seconds)
-        
         updateTimer()
-        
-        let duration = musicPlayer.duration
-        let currentTime = musicPlayer.currentTime
-        
-        print("Song Duration is \(duration) and the current time is \(currentTime)")
     }
     
     func updateTimer(){
@@ -133,8 +128,6 @@ class ScaleInfoViewController: UIViewController {
         musicCountdown.text = "\(seconds)"
     }
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
