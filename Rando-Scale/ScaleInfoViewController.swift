@@ -107,10 +107,16 @@ class ScaleInfoViewController: UIViewController {
         let totalTime = Int(musicPlayer.duration - musicPlayer.currentTime)
         let minutes = totalTime/60
         
-        let remainder = minutes.quotientAndRemainder(dividingBy: 60)
-        let seconds = remainder
+        var seconds = 0
+        let remainder = totalTime % 60
+        seconds = remainder
         
-        musicCountdown.text = ("\(minutes):\(totalTime)" )
+        if seconds > 9{
+            musicCountdown.text = ("\(minutes):\(seconds)" )
+        }else{
+            musicCountdown.text = ("\(minutes):0\(seconds)" )
+        }
+        
     }
     
     var seconds = 0
