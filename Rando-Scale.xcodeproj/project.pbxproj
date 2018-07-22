@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D333699D20D9EA5100F54D4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D333699C20D9EA5100F54D4C /* Default-568h@2x.png */; };
 		D33369DE20E5C14000F54D4C /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33369DD20E5C14000F54D4C /* functions.swift */; };
 		D33E8B4C20F1359C007A138B /* ScaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */; };
 		D34A596220F72A3C00280C1D /* ScaleDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D333699C20D9EA5100F54D4C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D33369DD20E5C14000F54D4C /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 		D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScaleTableViewController.swift; path = "Rando-Scale/ScaleTableViewController.swift"; sourceTree = "<group>"; };
 		D34A596120F72A3C00280C1D /* ScaleDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleDescriptions.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				D33E8B4B20F1359C007A138B /* ScaleTableViewController.swift */,
-				D333699C20D9EA5100F54D4C /* Default-568h@2x.png */,
 				D3B93D7D20CF64F700441D10 /* Rando-Scale */,
 				D3B93D9520CF64F900441D10 /* Rando-ScaleTests */,
 				D3B93DA020CF64F900441D10 /* Rando-ScaleUITests */,
@@ -261,7 +258,6 @@
 			files = (
 				D3B93D8C20CF64F900441D10 /* LaunchScreen.storyboard in Resources */,
 				D3C2247121005005004FED7A /* JesusTakeWheel.m4a in Resources */,
-				D333699D20D9EA5100F54D4C /* Default-568h@2x.png in Resources */,
 				D3B93D8920CF64F900441D10 /* Assets.xcassets in Resources */,
 				D3B93D8420CF64F700441D10 /* Main.storyboard in Resources */,
 			);
