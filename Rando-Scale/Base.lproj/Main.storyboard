@@ -30,13 +30,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-1D-cVM">
-                                                    <rect key="frame" x="61" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="199" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addMajors:" destination="RLL-QU-DaN" eventType="valueChanged" id="V1F-um-X6w"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-mS-yPC">
-                                                    <rect key="frame" x="42.5" y="12" width="43" height="21"/>
+                                                    <rect key="frame" x="111.5" y="12" width="43" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -64,13 +64,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="psm-4r-qdA">
-                                                    <rect key="frame" x="63" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="201" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addMinors:" destination="RLL-QU-DaN" eventType="valueChanged" id="9CA-jD-m7o"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74b-oq-ONJ">
-                                                    <rect key="frame" x="38" y="11" width="52" height="21"/>
+                                                    <rect key="frame" x="107" y="11" width="52" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -94,13 +94,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2O9-5a-Wit">
-                                                    <rect key="frame" x="63" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="201" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addModes:" destination="RLL-QU-DaN" eventType="valueChanged" id="XL8-KS-5MJ"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ4-JI-Any">
-                                                    <rect key="frame" x="37.5" y="11" width="53" height="21"/>
+                                                    <rect key="frame" x="106.5" y="11" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -124,13 +124,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZWx-sc-IWr">
-                                                    <rect key="frame" x="63" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="201" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="addSymmetrics:" destination="RLL-QU-DaN" eventType="valueChanged" id="Z4M-q3-ZO8"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symmetrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNZ-ko-Nbk">
-                                                    <rect key="frame" x="18.5" y="11" width="91" height="21"/>
+                                                    <rect key="frame" x="87.5" y="11" width="91" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -307,6 +307,7 @@
                             <constraint firstItem="EDT-pS-UJ2" firstAttribute="top" secondItem="GuD-WO-Mhk" secondAttribute="bottom" constant="11" id="AoG-RA-uCb"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="BG4-9t-0nK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EDT-pS-UJ2" secondAttribute="trailing" constant="16" id="BSp-NW-z9I"/>
+                            <constraint firstItem="4lQ-qb-Zbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="CFi-Gl-6Mp"/>
                             <constraint firstItem="Ndz-EN-GTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="Cmd-kh-jfD"/>
                             <constraint firstItem="4lQ-qb-Zbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="Ef7-GJ-hxb"/>
                             <constraint firstItem="GuD-WO-Mhk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="F2P-TQ-FTg"/>
@@ -616,11 +617,11 @@
                                 <exclude reference="44D-J5-E0i"/>
                                 <exclude reference="Xvg-ma-Ht9"/>
                                 <exclude reference="d41-Vg-e1V"/>
-                                <exclude reference="LgD-ZL-d6Z"/>
                                 <exclude reference="Ndl-9p-lDc"/>
                                 <exclude reference="YgN-DG-Fvc"/>
                                 <exclude reference="s7f-HG-G0a"/>
                                 <exclude reference="wUZ-14-aEk"/>
+                                <exclude reference="LgD-ZL-d6Z"/>
                                 <exclude reference="LIx-0t-Nwk"/>
                             </mask>
                         </variation>
@@ -654,9 +655,6 @@
                                 <exclude reference="gTJ-av-ksK"/>
                                 <exclude reference="ghn-Eg-rZi"/>
                                 <exclude reference="pp0-HX-lY6"/>
-                                <include reference="LgD-ZL-d6Z"/>
-                                <exclude reference="U1e-Bj-ZvO"/>
-                                <exclude reference="awR-wj-lSj"/>
                                 <exclude reference="99E-gq-QiQ"/>
                                 <include reference="Ndl-9p-lDc"/>
                                 <exclude reference="WIZ-L6-YPP"/>
@@ -665,6 +663,9 @@
                                 <exclude reference="mSW-OL-EUI"/>
                                 <include reference="s7f-HG-G0a"/>
                                 <include reference="wUZ-14-aEk"/>
+                                <include reference="LgD-ZL-d6Z"/>
+                                <exclude reference="U1e-Bj-ZvO"/>
+                                <exclude reference="awR-wj-lSj"/>
                                 <include reference="LIx-0t-Nwk"/>
                                 <exclude reference="Lrw-0c-Gae"/>
                                 <exclude reference="tWN-6x-GX9"/>

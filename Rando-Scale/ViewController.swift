@@ -41,7 +41,7 @@ var sendScaleText = ""
         
         print("Random Pitch Number is \(pitchRandomNumber)")
         
-        let currentPitch = noteNameLabel.text
+//        let currentPitch = noteNameLabel.text
         let nextPitch = pitches[pitchRandomNumber]
         
         //While Loop Causing Crash
