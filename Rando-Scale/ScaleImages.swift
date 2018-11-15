@@ -13,14 +13,14 @@ import CoreData
 
 
 let majorImage: UIImage = #imageLiteral(resourceName: "c-major")
-var majorData: Data = UIImagePNGRepresentation(majorImage)!
+var majorData: Data = majorImage.pngData()!
 
 let naturalMinorImage:UIImage  = #imageLiteral(resourceName: "c-natural-minor")
-let naturalMinorData:Data = UIImagePNGRepresentation(naturalMinorImage)!
+let naturalMinorData:Data = naturalMinorImage.pngData()!
 
 
 let harmonicMinorImage:UIImage  = #imageLiteral(resourceName: "c-harmonic-minor")
-let harmonicMinorData:Data = UIImagePNGRepresentation(harmonicMinorImage)!
+let harmonicMinorData:Data = harmonicMinorImage.pngData()!
 
 let melodicMinorImage:UIImage  = #imageLiteral(resourceName: "c-melodic-minor")
 let bluesImage:UIImage  = #imageLiteral(resourceName: "blues")

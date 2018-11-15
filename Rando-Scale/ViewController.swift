@@ -64,7 +64,6 @@ var sendScaleText = ""
         super.viewDidLoad()
 
         clearData()
-        
         addDescriptionsToCoreData()
         addImagesoCoreData()
         

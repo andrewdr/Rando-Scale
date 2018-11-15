@@ -85,7 +85,11 @@ class ScaleInfoViewController: UIViewController {
         let audioSession = AVAudioSession.sharedInstance()
         
         do{
-            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            
+//            try audioSession.setCategory(AVAudioSession.Category.playback)
+            
+            
         }catch let sessionError{
             print(sessionError)
             }

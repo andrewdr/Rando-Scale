@@ -184,7 +184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIW-mN-a0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="783"/>
+            <point key="canvasLocation" x="1858" y="721"/>
         </scene>
         <!--Rando Scale-->
         <scene sceneID="tne-QT-ifu">
